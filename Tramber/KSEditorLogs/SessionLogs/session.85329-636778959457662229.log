@@ -1,0 +1,33 @@
+2018-11-15 16:25:45.9201 [DEBUG] Validating model...
+2018-11-15 16:25:46.0038 [DEBUG] Model updated
+2018-11-15 16:25:46.0048 [DEBUG] Authenticating with server...
+2018-11-15 16:25:46.5125 [DEBUG] Connected to room. (85329:SceneFusion:SceneFusion)
+2018-11-15 16:25:46.5195 [INFO] Connected to server.
+2018-11-15 16:25:46.5205 [DEBUG] OS : Microsoft Windows NT 10.0.17134.0
+2018-11-15 16:25:46.5205 [DEBUG] Unity Version : 2018.2.16f1
+2018-11-15 16:25:46.5205 [DEBUG] Pro License : True
+2018-11-15 16:25:46.5205 [DEBUG] Platform : WindowsEditor
+2018-11-15 16:25:46.5215 [DEBUG] Build Target : StandaloneWindows64
+2018-11-15 16:25:46.5215 [DEBUG] Scene Fusion version : 1.8.1
+2018-11-15 16:25:46.5215 [DEBUG] Scene Fusion client build : 4
+2018-11-15 16:25:46.5215 [DEBUG] User : thankcreate@gmail.com
+2018-11-15 16:25:46.5215 [DEBUG] Waiting for server response
+2018-11-15 16:25:46.6072 [DEBUG] Tier: Scene Fusion Free, Permissions: 00001400
+2018-11-15 16:25:46.6072 [DEBUG] User Permissions: FFFFFFFF
+2018-11-15 16:25:47.0174 [DEBUG] No stand-in for UnityEngine.ProceduralMaterial
+2018-11-15 16:25:47.0174 [DEBUG] No stand-in for UnityEngine.ProceduralTexture
+2018-11-15 16:25:47.2747 [DEBUG] Uploading scene 'MainScene'
+2018-11-15 16:25:47.3470 [DEBUG] Spawn request. (Objects: 1)
+2018-11-15 16:25:47.5545 [DEBUG] Loading complete
+2018-11-15 16:26:18.4153 [DEBUG] Spawn request. (Objects: 1)
+2018-11-15 16:26:43.8685 [DEBUG] Spawn request. (Objects: 1)
+2018-11-15 16:27:27.6502 [DEBUG] Spawn request. (Objects: 1)
+2018-11-15 16:30:58.9552 [DEBUG] Spawn request. (Objects: 1)
+2018-11-15 16:37:37.0655 [DEBUG] Spawn request. (Objects: 1)
+2018-11-15 16:39:43.6835 [DEBUG] Spawn request. (Objects: 1)
+2018-11-15 16:41:04.6926 [DEBUG] Spawn request. (Objects: 1)
+2018-11-15 16:41:05.0627 [DEBUG] Spawn request. (Objects: 1)
+2018-11-15 16:46:08.3658 [DEBUG] Spawn request. (Objects: 1)
+2018-11-15 16:46:08.5393 [DEBUG] Spawn request. (Objects: 1)
+2018-11-15 19:51:49.2908 [ERROR] Disconnected: TIMEOUT
+2018-11-15 19:51:49.2918 [DEBUG] Disconnect. (Duration: 12362)

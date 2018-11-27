@@ -1,0 +1,24 @@
+2018-11-20 15:33:55.4446 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-20 16:13:15.1348 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-20 16:16:04.8578 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-20 16:17:00.1302 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-20 16:17:00.1841 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-20 16:17:01.9366 [DEBUG] Play mode: False
+2018-11-20 16:27:36.0838 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-20 16:27:36.2395 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-20 16:35:48.2504 [DEBUG] Play mode: False
+2018-11-20 16:40:53.4644 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-20 16:54:15.2149 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-20 20:38:25.8377 [DEBUG] Refresh token (H0uOjah9a2dXPmegob0iMoXh7IgMRTjHs8H9nafPZ199m9kbBCnIOjd8jmh7wmShl6AoaSYGlPzfXw0C03F6xRIsrjzrgTPPML8RHt5gUftB9xSu5Y28oJm8JbMWD2wGrOiucglFqHXEtAqMlues7nDg6qdapZxfXehhO9efC5FzyCxchzaOe5cunfsWloiHhaWxtWx5e6B8fCuMIMt5UfC3xgEdgBSwtykitQOaroBBe5ijGdRufmurlbYZclm) error: {"err":"Error: NameResolutionFailure"}
+2018-11-20 21:49:33.7830 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-20 21:49:33.9969 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-20 21:49:34.6502 [DEBUG] Refresh token () error: {"err":"Invalid token"}
+2018-11-20 21:50:36.0310 [DEBUG] Play mode: False
+2018-11-20 22:00:44.3931 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-20 22:00:44.4843 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-20 22:00:45.2294 [DEBUG] Refresh token () error: {"err":"Invalid token"}
+2018-11-20 22:00:52.6595 [DEBUG] Play mode: False
+2018-11-20 22:01:16.5560 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-20 22:01:16.7458 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-20 22:01:17.3422 [DEBUG] Refresh token () error: {"err":"Invalid token"}
+2018-11-20 22:01:23.3207 [DEBUG] Play mode: False

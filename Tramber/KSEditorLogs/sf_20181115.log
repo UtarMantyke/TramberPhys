@@ -1,3 +1,50 @@
 2018-11-15 14:34:53.7776 [DEBUG] Scene Fusion version 1.8.1-4
 2018-11-15 14:34:53.7935 [INFO] Setting define symbol SCENE_FUSION
 2018-11-15 14:35:04.1006 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-15 14:38:50.1572 [DEBUG] Web request login error: Invalid credentials
+2018-11-15 14:40:10.3055 [INFO] Launching Session: TestSync
+2018-11-15 14:40:11.0613 [DEBUG] Connecting
+2018-11-15 14:40:11.1032 [DEBUG] Connecting to room (85318:SceneFusion:SceneFusion) via TCP at matchmaker-console.kinematicsoup.com:1062
+2018-11-15 14:40:34.0428 [DEBUG] Sent D:/GameStudio/TramberPhys/Tramber/KSEditorLogs/SessionLogs/session.85318-636778896111142031.log
+2018-11-15 14:41:12.7793 [DEBUG] Connecting
+2018-11-15 14:41:12.7952 [DEBUG] Connecting to room (85318:SceneFusion:SceneFusion) via TCP at matchmaker-console.kinematicsoup.com:1062
+2018-11-15 14:41:50.3200 [DEBUG] Sent D:/GameStudio/TramberPhys/Tramber/KSEditorLogs/SessionLogs/session.85318-636778896728022679.log
+2018-11-15 14:43:53.0864 [INFO] Launching Session: TestSync
+2018-11-15 14:43:53.6315 [DEBUG] Connecting
+2018-11-15 14:43:53.6465 [DEBUG] Connecting to room (85320:SceneFusion:SceneFusion) via TCP at matchmaker-console.kinematicsoup.com:1098
+2018-11-15 15:05:39.6623 [DEBUG] Sent D:/GameStudio/TramberPhys/Tramber/KSEditorLogs/SessionLogs/session.85320-636778898337013584.log
+2018-11-15 15:06:06.4801 [DEBUG] Connecting
+2018-11-15 15:06:06.4961 [DEBUG] Connecting to room (85320:SceneFusion:SceneFusion) via TCP at matchmaker-console.kinematicsoup.com:1098
+2018-11-15 15:06:16.3998 [DEBUG] Sent D:/GameStudio/TramberPhys/Tramber/KSEditorLogs/SessionLogs/session.85320-636778911665160714.log
+2018-11-15 15:06:57.2701 [DEBUG] Connecting
+2018-11-15 15:06:57.2851 [DEBUG] Connecting to room (85321:SceneFusion:SceneFusion) via TCP at matchmaker-console.kinematicsoup.com:1063
+2018-11-15 15:07:10.3236 [DEBUG] Sent D:/GameStudio/TramberPhys/Tramber/KSEditorLogs/SessionLogs/session.85321-636778912172901327.log
+2018-11-15 15:08:31.2089 [DEBUG] Connecting
+2018-11-15 15:08:31.2274 [DEBUG] Connecting to room (85322:SceneFusion:SceneFusion) via TCP at matchmaker-console.kinematicsoup.com:1054
+2018-11-15 15:08:41.4569 [DEBUG] Sent D:/GameStudio/TramberPhys/Tramber/KSEditorLogs/SessionLogs/session.85322-636778913112334435.log
+2018-11-15 15:54:38.6387 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-15 15:55:55.0034 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-15 15:59:42.0404 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-15 16:07:35.2200 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-15 16:07:55.8511 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-15 16:13:10.7792 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-15 16:13:35.8132 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-15 16:14:16.7862 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-15 16:16:06.5967 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-15 16:25:44.7314 [INFO] Launching Session: MainScene
+2018-11-15 16:25:45.7038 [DEBUG] Connecting
+2018-11-15 16:25:45.7477 [DEBUG] Connecting to room (85329:SceneFusion:SceneFusion) via TCP at matchmaker-console.kinematicsoup.com:1097
+2018-11-15 19:51:49.3132 [DEBUG] Sent D:/GameStudio/TramberPhys/Tramber/KSEditorLogs/SessionLogs/session.85329-636778959457662229.log
+2018-11-15 19:52:00.4200 [DEBUG] Refresh token (7rWLPXbsymUQs4oxo72lO0SUjFOQech5geEPlRGs8JYjemlLQYw0xfGDWbr7bqSop4gWnzgbXwC7y2ZqCA41dpSMoJIl6alPadl87LhSiAbfMUK38dgb7jllH0kTorZOTP6Kt689PFqbRLe1lSFnX7FBux8oXtUNEKNfCtOWEMqOsnulj19WUf3LBU9kk7cO9M4y7lmAgCTYRFdjHSFYCqao1fRJuktX2fsjhbq7yD4nW6crXw7XMONLSldegGy) error: {"err":"Error: NameResolutionFailure"}
+2018-11-15 23:45:47.9770 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-15 23:45:48.1674 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-15 23:45:49.2165 [DEBUG] Refresh token () error: {"err":"Invalid token"}
+2018-11-15 23:45:53.0765 [DEBUG] Play mode: False
+2018-11-15 23:46:25.3131 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-15 23:46:25.4633 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-15 23:46:26.3974 [DEBUG] Refresh token () error: {"err":"Invalid token"}
+2018-11-15 23:46:49.7893 [DEBUG] Play mode: False
+2018-11-15 23:47:00.7119 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-15 23:47:00.8525 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-15 23:47:01.6793 [DEBUG] Refresh token () error: {"err":"Invalid token"}
+2018-11-15 23:50:08.2480 [DEBUG] Play mode: False

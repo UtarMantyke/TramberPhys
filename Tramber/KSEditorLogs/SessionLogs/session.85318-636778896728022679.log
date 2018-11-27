@@ -1,0 +1,14 @@
+2018-11-15 14:41:33.8040 [DEBUG] Connection attempt timed out. (85318:SceneFusion:SceneFusion)
+2018-11-15 14:41:33.8080 [WARNING] Connection failed: TIMEOUT, retrying...
+2018-11-15 14:41:35.8057 [DEBUG] Connecting to room (85318:SceneFusion:SceneFusion) via TCP at matchmaker-console.kinematicsoup.com:1062
+2018-11-15 14:41:50.3031 [DEBUG] Cancelled connection
+2018-11-15 14:41:50.3041 [DEBUG] Aborting connection attempt for room (85318:SceneFusion:SceneFusion)
+2018-11-15 14:41:50.3041 [DEBUG] Connection attempt aborted. (85318:SceneFusion:SceneFusion)
+2018-11-15 14:41:50.3041 [DEBUG] Connection failed. (85318:SceneFusion:SceneFusion)
+2018-11-15 14:41:50.3090 [ERROR] Socket Exception Interrupted: A blocking operation was interrupted by a call to WSACancelBlockingCall.
+
+  at System.Net.Sockets.Socket.Connect (System.Net.EndPoint remoteEP, Boolean requireSocketPolicy) [0x00000] in <filename unknown>:0 
+  at System.Net.Sockets.Socket.Connect (System.Net.EndPoint remoteEP) [0x00000] in <filename unknown>:0 
+  at  .⁞.  () [0x00000] in <filename unknown>:0 
+2018-11-15 14:41:50.3090 [DEBUG] Connection failed. (85318:SceneFusion:SceneFusion)
+2018-11-15 14:41:50.3170 [ERROR] Connection failed: UNKNOWN_ERROR

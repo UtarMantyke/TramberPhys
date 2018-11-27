@@ -1,0 +1,11 @@
+2018-11-15 15:06:16.3859 [DEBUG] Cancelled connection
+2018-11-15 15:06:16.3869 [DEBUG] Aborting connection attempt for room (85320:SceneFusion:SceneFusion)
+2018-11-15 15:06:16.3869 [DEBUG] Connection attempt aborted. (85320:SceneFusion:SceneFusion)
+2018-11-15 15:06:16.3869 [DEBUG] Connection failed. (85320:SceneFusion:SceneFusion)
+2018-11-15 15:06:16.3889 [ERROR] Socket Exception Interrupted: A blocking operation was interrupted by a call to WSACancelBlockingCall.
+
+  at System.Net.Sockets.Socket.Connect (System.Net.EndPoint remoteEP, Boolean requireSocketPolicy) [0x00000] in <filename unknown>:0 
+  at System.Net.Sockets.Socket.Connect (System.Net.EndPoint remoteEP) [0x00000] in <filename unknown>:0 
+  at  .⁞.  () [0x00000] in <filename unknown>:0 
+2018-11-15 15:06:16.3899 [DEBUG] Connection failed. (85320:SceneFusion:SceneFusion)
+2018-11-15 15:06:16.3978 [ERROR] Connection failed: UNKNOWN_ERROR

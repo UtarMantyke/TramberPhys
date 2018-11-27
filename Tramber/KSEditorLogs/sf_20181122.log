@@ -1,0 +1,535 @@
+2018-11-22 00:00:43.9873 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 00:00:44.1937 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-22 00:02:36.6914 [DEBUG] Play mode: False
+2018-11-22 00:02:47.9064 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 00:02:48.0655 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-22 00:05:36.4704 [DEBUG] Play mode: False
+2018-11-22 00:05:43.6402 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 00:05:43.8154 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-22 00:06:06.9048 [DEBUG] Play mode: False
+2018-11-22 00:06:20.4925 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 00:06:20.6527 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-22 00:07:29.9399 [DEBUG] Play mode: False
+2018-11-22 00:08:00.2849 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 00:08:00.4435 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-22 00:09:14.9522 [DEBUG] Play mode: False
+2018-11-22 00:09:26.0559 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 00:09:26.2225 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-22 00:09:43.5533 [DEBUG] Play mode: False
+2018-11-22 00:18:14.4739 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 00:18:14.6316 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-22 00:18:23.7699 [DEBUG] Play mode: False
+2018-11-22 00:18:44.6245 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 00:18:44.7905 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-22 00:20:10.3865 [DEBUG] Play mode: False
+2018-11-22 00:20:55.4765 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 00:20:55.6640 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-22 00:21:21.7539 [DEBUG] Play mode: False
+2018-11-22 00:21:41.4056 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 00:21:41.5582 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-22 00:23:33.7661 [DEBUG] Play mode: False
+2018-11-22 00:23:42.4671 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 00:23:42.6702 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-22 00:25:55.1269 [DEBUG] Play mode: False
+2018-11-22 00:26:05.3233 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 00:26:05.4974 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-22 00:27:24.5044 [DEBUG] Play mode: False
+2018-11-22 00:27:38.3537 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 00:27:38.5056 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-22 00:28:25.8070 [DEBUG] Play mode: False
+2018-11-22 00:36:53.2511 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 00:36:53.4402 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-22 00:37:06.1127 [DEBUG] Play mode: False
+2018-11-22 00:38:25.4190 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 00:38:25.6238 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-22 00:38:26.7832 [DEBUG] Play mode: False
+2018-11-22 00:39:40.8779 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 00:39:41.0664 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-22 00:39:43.8074 [DEBUG] Play mode: False
+2018-11-22 00:46:57.3245 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 00:47:16.0875 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 00:57:05.9445 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 01:01:24.0310 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 01:04:01.4851 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 01:04:01.6669 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-22 01:04:01.6889 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:31)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.1845 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:31)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.1935 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:31)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.2015 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:31)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.2095 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:31)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.2185 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:31)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.2264 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:31)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.2354 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:31)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.2434 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:31)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.2514 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:31)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.2603 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:31)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.2683 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:31)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.2763 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:31)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.2843 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:31)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.2933 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:31)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.3012 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:31)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.3092 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:31)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.4458 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:36)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.4538 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:36)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.4628 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:36)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.4708 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:36)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.4788 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:36)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.4867 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:36)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.4957 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:36)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.5037 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:36)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.5117 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:36)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.5217 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:36)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.5316 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:36)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.5416 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:36)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.5496 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:36)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.5595 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:31)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.5685 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:31)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.5775 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:31)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.5865 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:31)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.5945 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:31)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.6024 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:31)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.6104 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:31)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.6194 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:31)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.6274 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:31)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.6373 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:31)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.6473 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:31)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.6553 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:31)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.6633 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:31)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.6713 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:31)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.6812 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:31)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.6892 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:31)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.7002 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:36)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.7082 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:36)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.7161 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:36)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.7251 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:36)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.7331 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:36)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.7411 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:36)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.7490 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:36)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.7580 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:36)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.7660 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:36)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.7740 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:36)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:02.7820 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:36)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:03.0774 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:36)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:03.0854 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:36)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:03.0934 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:36)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:03.1014 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:36)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:03.1263 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:31)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:03.1512 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:36)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:03.1682 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:36)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:03.1762 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:36)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:03.1841 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:36)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:03.1931 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:36)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:03.2011 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:36)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:03.2101 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:36)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:03.2180 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:36)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:03.3716 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:36)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:03.3826 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:36)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:03.3906 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:36)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:03.4883 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:36)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:04:03.6698 [DEBUG] Play mode: False
+2018-11-22 01:04:33.2115 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 01:06:46.8815 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 01:06:46.9923 [ERROR] UnassignedReferenceException: The variable fireLeft of LevelManager has not been assigned.
+You probably need to assign the fireLeft variable of the LevelManager script in the inspector.
+LevelManager.UpdateEngine () (at Assets/Resources/Scripts/LevelManager.cs:31)
+LevelManager.Update () (at Assets/Resources/Scripts/LevelManager.cs:22)
+
+2018-11-22 01:06:47.0491 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-22 01:06:47.7842 [DEBUG] Play mode: False
+2018-11-22 01:07:06.7843 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 01:07:06.9644 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-22 01:07:09.7622 [DEBUG] Play mode: False
+2018-11-22 01:08:21.8145 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 01:08:21.8953 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-22 01:08:24.8626 [DEBUG] Play mode: False
+2018-11-22 01:08:32.0467 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 01:08:32.2661 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-22 01:08:37.5220 [DEBUG] Play mode: False
+2018-11-22 01:10:18.3322 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 01:10:26.7502 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 01:10:26.9277 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-22 01:10:45.0256 [DEBUG] Play mode: False
+2018-11-22 01:10:53.7349 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 01:10:53.8945 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-22 01:10:56.9268 [DEBUG] Play mode: False
+2018-11-22 01:12:50.2080 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 01:12:50.3976 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-22 01:13:05.3086 [DEBUG] Play mode: False
+2018-11-22 01:14:41.9070 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 01:14:42.0765 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-22 01:14:43.4617 [DEBUG] Play mode: False
+2018-11-22 01:14:58.9471 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 01:14:59.1037 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-22 01:15:07.2730 [DEBUG] Play mode: False
+2018-11-22 01:15:14.4926 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 01:15:14.6562 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-22 01:15:54.2250 [DEBUG] Play mode: False
+2018-11-22 01:16:01.8365 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 01:16:01.9981 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-22 01:16:07.2560 [DEBUG] Play mode: False
+2018-11-22 01:16:17.7184 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 01:16:17.8840 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-22 01:16:54.8555 [DEBUG] Play mode: False
+2018-11-22 01:17:21.9766 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 01:17:30.6158 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 01:17:30.8265 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-22 01:17:40.5186 [DEBUG] Play mode: False
+2018-11-22 01:18:22.9002 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 01:18:23.1186 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-22 01:18:30.9121 [DEBUG] Play mode: False
+2018-11-22 01:18:38.4384 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 01:18:38.6079 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-22 01:18:47.2664 [DEBUG] Play mode: False
+2018-11-22 01:18:54.7739 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 01:18:54.9454 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-22 01:19:03.3885 [DEBUG] Play mode: False
+2018-11-22 01:19:15.9368 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 01:19:16.0889 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-22 01:19:23.8474 [DEBUG] Play mode: False
+2018-11-22 01:19:55.7783 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 01:19:55.9608 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-22 01:20:26.0669 [DEBUG] Play mode: False
+2018-11-22 01:20:53.3402 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 01:20:53.5042 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-22 01:21:07.9485 [DEBUG] Play mode: False
+2018-11-22 01:21:26.7976 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 01:21:26.9625 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-22 01:21:47.7399 [DEBUG] Play mode: False
+2018-11-22 01:22:46.4800 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 01:22:46.6216 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-22 01:23:02.8772 [DEBUG] Play mode: False
+2018-11-22 01:23:09.9543 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 01:23:10.1158 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-22 01:24:06.8528 [DEBUG] Play mode: False
+2018-11-22 01:24:19.2274 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 01:24:19.3900 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-22 01:24:45.7093 [DEBUG] Play mode: False
+2018-11-22 01:29:04.0523 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 01:29:04.1969 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-22 01:29:12.7955 [DEBUG] Play mode: False
+2018-11-22 01:29:26.3385 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 01:29:26.4821 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-22 01:30:53.4304 [DEBUG] Play mode: False
+2018-11-22 01:32:19.6887 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 01:43:14.2968 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 01:43:48.0944 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 01:43:48.2639 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-22 01:43:50.3884 [ERROR] UnassignedReferenceException: The variable forceThroughAnchor of ShipController has not been assigned.
+You probably need to assign the forceThroughAnchor variable of the ShipController script in the inspector.
+ShipController.UpdateEngine () (at Assets/Resources/Scripts/ShipController.cs:44)
+ShipController.Update () (at Assets/Resources/Scripts/ShipController.cs:27)
+
+2018-11-22 01:43:50.3964 [ERROR] UnassignedReferenceException: The variable forceThroughAnchor of ShipController has not been assigned.
+You probably need to assign the forceThroughAnchor variable of the ShipController script in the inspector.
+ShipController.UpdateEngine () (at Assets/Resources/Scripts/ShipController.cs:44)
+ShipController.Update () (at Assets/Resources/Scripts/ShipController.cs:27)
+
+2018-11-22 01:43:50.4044 [ERROR] UnassignedReferenceException: The variable forceThroughAnchor of ShipController has not been assigned.
+You probably need to assign the forceThroughAnchor variable of the ShipController script in the inspector.
+ShipController.UpdateEngine () (at Assets/Resources/Scripts/ShipController.cs:44)
+ShipController.Update () (at Assets/Resources/Scripts/ShipController.cs:27)
+
+2018-11-22 01:43:50.4133 [ERROR] UnassignedReferenceException: The variable forceThroughAnchor of ShipController has not been assigned.
+You probably need to assign the forceThroughAnchor variable of the ShipController script in the inspector.
+ShipController.UpdateEngine () (at Assets/Resources/Scripts/ShipController.cs:44)
+ShipController.Update () (at Assets/Resources/Scripts/ShipController.cs:27)
+
+2018-11-22 01:43:50.4213 [ERROR] UnassignedReferenceException: The variable forceThroughAnchor of ShipController has not been assigned.
+You probably need to assign the forceThroughAnchor variable of the ShipController script in the inspector.
+ShipController.UpdateEngine () (at Assets/Resources/Scripts/ShipController.cs:44)
+ShipController.Update () (at Assets/Resources/Scripts/ShipController.cs:27)
+
+2018-11-22 01:43:50.4293 [ERROR] UnassignedReferenceException: The variable forceThroughAnchor of ShipController has not been assigned.
+You probably need to assign the forceThroughAnchor variable of the ShipController script in the inspector.
+ShipController.UpdateEngine () (at Assets/Resources/Scripts/ShipController.cs:44)
+ShipController.Update () (at Assets/Resources/Scripts/ShipController.cs:27)
+
+2018-11-22 01:43:50.4373 [ERROR] UnassignedReferenceException: The variable forceThroughAnchor of ShipController has not been assigned.
+You probably need to assign the forceThroughAnchor variable of the ShipController script in the inspector.
+ShipController.UpdateEngine () (at Assets/Resources/Scripts/ShipController.cs:44)
+ShipController.Update () (at Assets/Resources/Scripts/ShipController.cs:27)
+
+2018-11-22 01:43:50.4472 [ERROR] UnassignedReferenceException: The variable forceThroughAnchor of ShipController has not been assigned.
+You probably need to assign the forceThroughAnchor variable of the ShipController script in the inspector.
+ShipController.UpdateEngine () (at Assets/Resources/Scripts/ShipController.cs:44)
+ShipController.Update () (at Assets/Resources/Scripts/ShipController.cs:27)
+
+2018-11-22 01:43:50.4572 [ERROR] UnassignedReferenceException: The variable forceThroughAnchor of ShipController has not been assigned.
+You probably need to assign the forceThroughAnchor variable of the ShipController script in the inspector.
+ShipController.UpdateEngine () (at Assets/Resources/Scripts/ShipController.cs:44)
+ShipController.Update () (at Assets/Resources/Scripts/ShipController.cs:27)
+
+2018-11-22 01:43:50.4652 [ERROR] UnassignedReferenceException: The variable forceThroughAnchor of ShipController has not been assigned.
+You probably need to assign the forceThroughAnchor variable of the ShipController script in the inspector.
+ShipController.UpdateEngine () (at Assets/Resources/Scripts/ShipController.cs:44)
+ShipController.Update () (at Assets/Resources/Scripts/ShipController.cs:27)
+
+2018-11-22 01:43:50.4732 [ERROR] UnassignedReferenceException: The variable forceThroughAnchor of ShipController has not been assigned.
+You probably need to assign the forceThroughAnchor variable of the ShipController script in the inspector.
+ShipController.UpdateEngine () (at Assets/Resources/Scripts/ShipController.cs:44)
+ShipController.Update () (at Assets/Resources/Scripts/ShipController.cs:27)
+
+2018-11-22 01:43:50.4811 [ERROR] UnassignedReferenceException: The variable forceThroughAnchor of ShipController has not been assigned.
+You probably need to assign the forceThroughAnchor variable of the ShipController script in the inspector.
+ShipController.UpdateEngine () (at Assets/Resources/Scripts/ShipController.cs:44)
+ShipController.Update () (at Assets/Resources/Scripts/ShipController.cs:27)
+
+2018-11-22 01:43:50.4901 [ERROR] UnassignedReferenceException: The variable forceThroughAnchor of ShipController has not been assigned.
+You probably need to assign the forceThroughAnchor variable of the ShipController script in the inspector.
+ShipController.UpdateEngine () (at Assets/Resources/Scripts/ShipController.cs:44)
+ShipController.Update () (at Assets/Resources/Scripts/ShipController.cs:27)
+
+2018-11-22 01:43:50.4981 [ERROR] UnassignedReferenceException: The variable forceThroughAnchor of ShipController has not been assigned.
+You probably need to assign the forceThroughAnchor variable of the ShipController script in the inspector.
+ShipController.UpdateEngine () (at Assets/Resources/Scripts/ShipController.cs:44)
+ShipController.Update () (at Assets/Resources/Scripts/ShipController.cs:27)
+
+2018-11-22 01:43:50.5061 [ERROR] UnassignedReferenceException: The variable forceThroughAnchor of ShipController has not been assigned.
+You probably need to assign the forceThroughAnchor variable of the ShipController script in the inspector.
+ShipController.UpdateEngine () (at Assets/Resources/Scripts/ShipController.cs:44)
+ShipController.Update () (at Assets/Resources/Scripts/ShipController.cs:27)
+
+2018-11-22 01:43:50.5141 [ERROR] UnassignedReferenceException: The variable forceThroughAnchor of ShipController has not been assigned.
+You probably need to assign the forceThroughAnchor variable of the ShipController script in the inspector.
+ShipController.UpdateEngine () (at Assets/Resources/Scripts/ShipController.cs:44)
+ShipController.Update () (at Assets/Resources/Scripts/ShipController.cs:27)
+
+2018-11-22 01:43:50.5230 [ERROR] UnassignedReferenceException: The variable forceThroughAnchor of ShipController has not been assigned.
+You probably need to assign the forceThroughAnchor variable of the ShipController script in the inspector.
+ShipController.UpdateEngine () (at Assets/Resources/Scripts/ShipController.cs:44)
+ShipController.Update () (at Assets/Resources/Scripts/ShipController.cs:27)
+
+2018-11-22 01:43:52.8750 [DEBUG] Play mode: False
+2018-11-22 01:44:06.4535 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 01:44:54.6094 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 01:44:54.7740 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-22 01:45:09.0482 [DEBUG] Play mode: False
+2018-11-22 01:46:01.3484 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 01:46:35.8527 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 01:46:36.0313 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-22 01:46:45.6917 [DEBUG] Play mode: False
+2018-11-22 01:46:54.4261 [DEBUG] Scene Fusion version 1.8.1-4
+2018-11-22 01:46:54.6185 [DEBUG] Play mode: True, sync in play mode: False
+2018-11-22 01:50:43.9297 [DEBUG] Play mode: False

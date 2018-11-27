@@ -1,0 +1,22 @@
+2018-11-15 15:08:31.3956 [DEBUG] Validating model...
+2018-11-15 15:08:31.4783 [DEBUG] Model updated
+2018-11-15 15:08:31.4793 [DEBUG] Authenticating with server...
+2018-11-15 15:08:31.5940 [DEBUG] Connected to room. (85322:SceneFusion:SceneFusion)
+2018-11-15 15:08:31.6030 [INFO] Connected to server.
+2018-11-15 15:08:31.6030 [DEBUG] OS : Microsoft Windows NT 10.0.17134.0
+2018-11-15 15:08:31.6030 [DEBUG] Unity Version : 2018.2.16f1
+2018-11-15 15:08:31.6030 [DEBUG] Pro License : True
+2018-11-15 15:08:31.6030 [DEBUG] Platform : WindowsEditor
+2018-11-15 15:08:31.6030 [DEBUG] Build Target : StandaloneWindows64
+2018-11-15 15:08:31.6030 [DEBUG] Scene Fusion version : 1.8.1
+2018-11-15 15:08:31.7775 [DEBUG] Scene Fusion client build : 4
+2018-11-15 15:08:31.7785 [DEBUG] User : thankcreate@gmail.com
+2018-11-15 15:08:31.7785 [DEBUG] Waiting for server response
+2018-11-15 15:08:31.7845 [DEBUG] Tier: Scene Fusion Free, Permissions: 00001400
+2018-11-15 15:08:31.7845 [DEBUG] User Permissions: FFFFFFFF
+2018-11-15 15:08:32.0548 [DEBUG] No stand-in for UnityEngine.ProceduralMaterial
+2018-11-15 15:08:32.0548 [DEBUG] No stand-in for UnityEngine.ProceduralTexture
+2018-11-15 15:08:32.6950 [DEBUG] Loading complete
+2018-11-15 15:08:41.1677 [DEBUG] Disconnecting from room (85322:SceneFusion:SceneFusion)
+2018-11-15 15:08:41.1717 [INFO] Disconnected from server.
+2018-11-15 15:08:41.1717 [DEBUG] Disconnect. (Duration: 9)
