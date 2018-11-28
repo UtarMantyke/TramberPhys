@@ -10,6 +10,7 @@ public class Drop : MonoBehaviour {
         WATER_DROP,
         SUNSHINE_DROP,
         O2_DROP,
+        NONE,
     };
 
 
@@ -36,15 +37,22 @@ public class Drop : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        
         this.transform.localScale = (health / maxHealth) * Vector3.one;
 	}
 
+    bool inDestroying = false;
     public void TouchVacuum()
     {
+        if (inDestroying)
+            return;
+
         health -= Time.deltaTime * maxHealth / timeToAbsorb;
 
         if(health / maxHealth < LevelManager.Instance.absorbThreshouldRatio)
         {
+            inDestroying = true;
             var seq = DOTween.Sequence();
             seq.Append(DOTween.To(()=> health, x=> health = x, 0, LevelManager.Instance.absorbThreshouldTime));
             seq.AppendCallback(() =>

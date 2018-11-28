@@ -21,35 +21,60 @@ public class VacuumSensor : MonoBehaviour {
         Debug.Log("Trigger Enter Vacuum");
 
         var drop = other.gameObject.GetComponent<Drop>();
-        if (!drop)
-            return;
+        var flower = other.gameObject.GetComponent<Flower>();
+        if (drop)
+        {
+            drop.Sensor = this;
+            drop.OnAbsorbed += Absorbed;
+        }
+        else if(flower)
+        {
+            flower.OnFeeded += Feeded;
+        }
 
-        drop.Sensor = this;
-        drop.OnAbsorbed += Absorbed;
     }
 
     public void Absorbed(Drop dp)
     {
+        if (!dp)
+            return;
+
+        var type = dp.type;
+        
+        shipController.CurrentCarriedDrop = type;
         Destroy(dp);
+    }
+
+    public void Feeded(Flower fl)
+    {
+        shipController.CurrentCarriedDrop = Drop.DROP_TYPE.NONE;
     }
 
     private void OnTriggerStay2D(Collider2D other)
     {
         var drop = other.gameObject.GetComponent<Drop>();
-        if (!drop)
-            return;
+        var flower = other.gameObject.GetComponent<Flower>();
 
-        drop.TouchVacuum();
+        if(drop)
+        {
+            // already have one loaded
+            if (shipController.CurrentCarriedDrop != Drop.DROP_TYPE.NONE)
+                return;
+
+            var type = drop.type;
+            if (shipController.flower.CurrentNeedDrop == type)
+            {
+                drop.TouchVacuum();
+            }
+        }
+        else if(flower)
+        {
+            if (shipController.CurrentCarriedDrop == flower.CurrentNeedDrop)
+                flower.TouchVacuum();
+        }     
     }
 
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        var drop = other.gameObject.GetComponent<Drop>();
-        if (!drop)
-            return;
-        
-        drop.OnAbsorbed -= Absorbed;
-    }
+
 
 
 

@@ -12,7 +12,7 @@ public class CubeTest : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        var device = InputManager.ActiveDevice;
+        var device = InControl.InputManager.ActiveDevice;
 
         transform.Rotate(Vector3.down, 500.0f * Time.deltaTime * device.LeftStickX, Space.World);
         transform.Rotate(Vector3.right, 500.0f * Time.deltaTime * device.LeftStickY, Space.World);

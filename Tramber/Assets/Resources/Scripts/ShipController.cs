@@ -1,4 +1,5 @@
 ﻿using BindingsExample;
+using DG.Tweening;
 using InControl;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,34 +8,107 @@ using UnityEngine;
 public class ShipController : MonoBehaviour
 {
 
-    PlayerActions playerActions;
+    MyPlayerActions playerActions;
 
     public Rigidbody2D shipBody;
     public GameObject fireLeft;
     public GameObject fireRight;
     public GameObject forceThroughAnchor;
+    public Flower flower;
 
     public float engineStrenth = 15.0f;
 
+    bool canControl = true;
+
+    bool inRestart = false;
+
+
+    private float alpha = 1;
+
+    Drop.DROP_TYPE currentCarriedDrop = Drop.DROP_TYPE.NONE;
+    public Drop.DROP_TYPE CurrentCarriedDrop
+    {
+        get { return currentCarriedDrop; }
+        set { currentCarriedDrop = value; }
+    }
     // Use this for initialization
     void Start()
     {
 
-        playerActions = CreateWithDefaultBindings();
+        playerActions = MyPlayerActions.CreateWithDefaultBindings();
     }
 
     // Update is called once per frame
     void Update()
     {
         UpdateEngine();
+        CheckIfOutOfScreen();
+        SetAlpha(alpha);
 
+        Debug.Log(CurrentCarriedDrop);
     }
 
+    void CheckIfOutOfScreen()
+    {
+        if (inRestart)
+            return;
+
+        var vpPosi = Camera.main.WorldToViewportPoint(transform.position);
+        float xTor = 0.2f;
+        float yTor = 0.15f;
+        if(vpPosi.x < 0 - xTor || vpPosi.x > 1 + xTor || vpPosi.y > 1 + yTor || vpPosi.y < 0 - yTor)
+        {
+            inRestart = true;
+            canControl = false;
+            shipBody.bodyType = RigidbodyType2D.Static;
+            transform.position = LevelManager.Instance.initPosi.transform.position;
+
+            float dt = 0.3f;
+            transform.localEulerAngles = Vector3.zero;
+            var seq = DOTween.Sequence();
+            seq.Append(DOTween.To(() => alpha, x => alpha = x, 0, dt));
+            seq.Append(DOTween.To(() => alpha, x => alpha = x, 1, dt));
+            seq.Append(DOTween.To(() => alpha, x => alpha = x, 0, dt));
+            seq.Append(DOTween.To(() => alpha, x => alpha = x, 1, dt));
+            seq.Append(DOTween.To(() => alpha, x => alpha = x, 0, dt));
+            seq.Append(DOTween.To(() => alpha, x => alpha = x, 1, dt));
+            seq.AppendCallback(() => {
+                inRestart = false;
+                canControl = true;
+                shipBody.bodyType = RigidbodyType2D.Dynamic;                
+            });
+        }
+    }
+
+    public void SetAlpha(float alpha)
+    {
+        SpriteRenderer[] children = GetComponentsInChildren<SpriteRenderer>();
+        Color newColor;
+        foreach (SpriteRenderer child in children)
+        {
+            newColor = child.color;
+            newColor.a = alpha;
+            child.color = newColor;
+        }
+    }
 
     void UpdateEngine()
-    { 
+    {
+        if (!canControl)
+            return;
+
+
+        var devices = InControl.InputManager.Devices;
+        var activeDevice = InControl.InputManager.ActiveDevice;
+        //Debug.Log(devices.Count);
+        //Debug.Log(activeDevice.Name);
+
+
         var strenth = engineStrenth;
-        if (playerActions.Left.IsPressed)
+
+        //if (playerActions.Left.IsPressed || activeDevice.Action1.IsPressed)
+        // if (playerActions.Left.IsPressed || devices[0].Action1.IsPressed || devices[1].Action1.IsPressed)
+        if (playerActions.Left.IsPressed || devices[0].Action1.IsPressed)
         {
             var dir = forceThroughAnchor.transform.position - fireLeft.transform.position;
             dir.Normalize();            
@@ -46,8 +120,9 @@ public class ShipController : MonoBehaviour
             fireLeft.SetActive(false);
         }
 
-
-        if (playerActions.Right.IsPressed)
+        // if (playerActions.Right.IsPressed || activeDevice.Action2.IsPressed)
+        // if (playerActions.Right.IsPressed || devices[0].Action2.IsPressed || devices[1].Action2.IsPressed)
+        if (playerActions.Right.IsPressed || devices[1].Action2.IsPressed)
         {
             var dir = forceThroughAnchor.transform.position - fireRight.transform.position;
             dir.Normalize();
@@ -61,37 +136,5 @@ public class ShipController : MonoBehaviour
     }
 
 
-    public static PlayerActions CreateWithDefaultBindings()
-    {
-        var playerActions = new PlayerActions();
-
-        // How to set up mutually exclusive keyboard bindings with a modifier key.
-        // playerActions.Back.AddDefaultBinding( Key.Shift, Key.Tab );
-        // playerActions.Next.AddDefaultBinding( KeyCombo.With( Key.Tab ).AndNot( Key.Shift ) );
-
-        playerActions.Fire.AddDefaultBinding(Key.A);
-        playerActions.Fire.AddDefaultBinding(InputControlType.Action1);
-        playerActions.Fire.AddDefaultBinding(Mouse.LeftButton);
-
-        playerActions.Jump.AddDefaultBinding(Key.Space);
-        playerActions.Jump.AddDefaultBinding(InputControlType.Action3);
-        playerActions.Jump.AddDefaultBinding(InputControlType.Back);
-
-        playerActions.Up.AddDefaultBinding(Key.UpArrow);
-        playerActions.Down.AddDefaultBinding(Key.DownArrow);
-        playerActions.Left.AddDefaultBinding(Key.LeftArrow);
-        playerActions.Right.AddDefaultBinding(Key.RightArrow);
-
-        playerActions.Left.AddDefaultBinding(InputControlType.LeftStickLeft);
-        playerActions.Right.AddDefaultBinding(InputControlType.LeftStickRight);
-        playerActions.Up.AddDefaultBinding(InputControlType.LeftStickUp);
-        playerActions.Down.AddDefaultBinding(InputControlType.LeftStickDown);
-
-        playerActions.Left.AddDefaultBinding(InputControlType.DPadLeft);
-        playerActions.Right.AddDefaultBinding(InputControlType.DPadRight);
-        playerActions.Up.AddDefaultBinding(InputControlType.DPadUp);
-        playerActions.Down.AddDefaultBinding(InputControlType.DPadDown);
-
-        return playerActions;
-    }
+    
 }

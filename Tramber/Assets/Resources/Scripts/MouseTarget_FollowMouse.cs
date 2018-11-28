@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Tobii.Gaming;
 using UnityEngine;
 
 
@@ -18,11 +19,16 @@ public class MouseTarget_FollowMouse : MonoBehaviour
         mousePositionInScreen.x = Mathf.Clamp(mousePositionInScreen.x, 0f, Camera.main.pixelWidth);
         mousePositionInScreen.y = Mathf.Clamp(mousePositionInScreen.y, 0f, Camera.main.pixelHeight);
 
+
+        var targetPosi = mousePositionInScreen;
+        if(LevelManager.Instance.useEyeControl)
+            targetPosi = TobiiAPI.GetGazePoint().Screen;
+
         //now translate this position to world coordinates
-        Vector3 mousePositionInWorld = Camera.main.ScreenToWorldPoint(mousePositionInScreen);
+        Vector3 mousePositionInWorld = Camera.main.ScreenToWorldPoint(targetPosi);
 
         //move the mouse target to the mouse position
-        transform.position = mousePositionInWorld;
+        transform.position = mousePositionInWorld;        
     }
 
     //Draw a line to the bat to show where this is pulling from
