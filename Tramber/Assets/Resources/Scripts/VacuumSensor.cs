@@ -47,7 +47,7 @@ public class VacuumSensor : MonoBehaviour {
 
     public void Feeded(Flower fl)
     {
-        shipController.CurrentCarriedDrop = Drop.DROP_TYPE.NONE;
+        shipController.CurrentCarriedDrop = DROP_TYPE.NONE;
     }
 
     private void OnTriggerStay2D(Collider2D other)
@@ -58,7 +58,7 @@ public class VacuumSensor : MonoBehaviour {
         if(drop)
         {
             // already have one loaded
-            if (shipController.CurrentCarriedDrop != Drop.DROP_TYPE.NONE)
+            if (shipController.CurrentCarriedDrop != DROP_TYPE.NONE)
                 return;
 
             var type = drop.type;

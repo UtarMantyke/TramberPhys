@@ -555,9 +555,11 @@ MonoBehaviour:
   guids:
   - 7e9e6879-5280-4111-a48f-362640eaefbd
   - 03e41fdb-a250-4b76-986a-2bb0abf0572b
+  - 625d3a33-ddcf-4b2b-9a30-7d45efd03b65
   objects:
   - {fileID: 1742912701}
   - {fileID: 1986069121}
+  - {fileID: 1756644814}
 --- !u!4 &389655140
 Transform:
   m_ObjectHideFlags: 0
@@ -1963,7 +1965,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 178470, guid: 14a53555be1186948a7459a8ed1394e8, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14a53555be1186948a7459a8ed1394e8, type: 2}
@@ -2088,8 +2090,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 0
   m_AngleLimits:
-    m_LowerAngle: -120
-    m_UpperAngle: 120
+    m_LowerAngle: -135
+    m_UpperAngle: 135
 --- !u!1 &780477366
 GameObject:
   m_ObjectHideFlags: 0
@@ -3222,7 +3224,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 1
   m_AngularDrag: 1
-  m_GravityScale: 0.3
+  m_GravityScale: 0.325
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -3276,6 +3278,10 @@ MonoBehaviour:
   absorbThreshouldTime: 0.4
   gazePlotter: {fileID: 1246523532}
   useEyeControl: 1
+  shipGravity: 0.325
+  enginePower: 15
+  linerDrag: 1
+  angularDrap: 1
   initPosi: {fileID: 1638762201}
 --- !u!4 &1756644816
 Transform:

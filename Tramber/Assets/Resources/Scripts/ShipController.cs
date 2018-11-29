@@ -25,12 +25,19 @@ public class ShipController : MonoBehaviour
 
     private float alpha = 1;
 
-    Drop.DROP_TYPE currentCarriedDrop = Drop.DROP_TYPE.NONE;
-    public Drop.DROP_TYPE CurrentCarriedDrop
+    DROP_TYPE currentCarriedDrop = DROP_TYPE.NONE;
+    public DROP_TYPE CurrentCarriedDrop
     {
         get { return currentCarriedDrop; }
         set { currentCarriedDrop = value; }
     }
+
+    private void Awake()
+    {
+        GetComponent<Rigidbody2D>().gravityScale = LevelManager.Instance.shipGravity;
+        engineStrenth = LevelManager.Instance.enginePower;
+    }
+
     // Use this for initialization
     void Start()
     {
@@ -45,7 +52,7 @@ public class ShipController : MonoBehaviour
         CheckIfOutOfScreen();
         SetAlpha(alpha);
 
-        Debug.Log(CurrentCarriedDrop);
+
     }
 
     void CheckIfOutOfScreen()
@@ -106,9 +113,9 @@ public class ShipController : MonoBehaviour
 
         var strenth = engineStrenth;
 
-        //if (playerActions.Left.IsPressed || activeDevice.Action1.IsPressed)
+        if (playerActions.Left.IsPressed)
         // if (playerActions.Left.IsPressed || devices[0].Action1.IsPressed || devices[1].Action1.IsPressed)
-        if (playerActions.Left.IsPressed || devices[0].Action1.IsPressed)
+        // if (playerActions.Left.IsPressed || devices[0].Action1.IsPressed)
         {
             var dir = forceThroughAnchor.transform.position - fireLeft.transform.position;
             dir.Normalize();            
@@ -120,9 +127,10 @@ public class ShipController : MonoBehaviour
             fireLeft.SetActive(false);
         }
 
-        // if (playerActions.Right.IsPressed || activeDevice.Action2.IsPressed)
+
+        if (playerActions.Right.IsPressed)
         // if (playerActions.Right.IsPressed || devices[0].Action2.IsPressed || devices[1].Action2.IsPressed)
-        if (playerActions.Right.IsPressed || devices[1].Action2.IsPressed)
+        // if (playerActions.Right.IsPressed || devices[1].Action2.IsPressed)
         {
             var dir = forceThroughAnchor.transform.position - fireRight.transform.position;
             dir.Normalize();

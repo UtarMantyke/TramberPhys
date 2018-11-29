@@ -22,7 +22,14 @@ public class MouseTarget_FollowMouse : MonoBehaviour
 
         var targetPosi = mousePositionInScreen;
         if(LevelManager.Instance.useEyeControl)
-            targetPosi = TobiiAPI.GetGazePoint().Screen;
+        {
+            if(TobiiAPI.IsConnected)
+            {
+                GazePoint gazePoint = TobiiAPI.GetGazePoint();
+                targetPosi = gazePoint.Screen;
+            }
+        }
+            
 
         //now translate this position to world coordinates
         Vector3 mousePositionInWorld = Camera.main.ScreenToWorldPoint(targetPosi);

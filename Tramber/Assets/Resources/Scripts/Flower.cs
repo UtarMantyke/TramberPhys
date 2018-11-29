@@ -9,8 +9,8 @@ public class Flower : MonoBehaviour {
     public GameObject bubble;
     public GameObject needDropFigure;
 
-    Drop.DROP_TYPE currentNeedDrop;
-    public Drop.DROP_TYPE CurrentNeedDrop
+    DROP_TYPE currentNeedDrop;
+    public DROP_TYPE CurrentNeedDrop
     {
         get { return currentNeedDrop; }
         set { currentNeedDrop = value; }
@@ -36,7 +36,7 @@ public class Flower : MonoBehaviour {
 
     public void SetNeedType()
     {
-        CurrentNeedDrop = (Drop.DROP_TYPE)seq[seqIndex];
+        CurrentNeedDrop = (DROP_TYPE)seq[seqIndex];
         needDropFigure.GetComponent<SpriteRenderer>().sprite = dropSprites[seq[seqIndex]];
     }
 

@@ -1,19 +1,23 @@
 ﻿using DG.Tweening;
+using Sirenix.OdinInspector;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum DROP_TYPE
+{
+    WATER,
+    SUNSHINE,
+    O2,
+    NONE,
+};
+
+
 public class Drop : MonoBehaviour {
 
-    public enum DROP_TYPE{
-        WATER_DROP,
-        SUNSHINE_DROP,
-        O2_DROP,
-        NONE,
-    };
 
-
+    [EnumToggleButtons]
     public DROP_TYPE type;
 
     float health = 100.0f;
@@ -65,6 +69,6 @@ public class Drop : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Trigger Enter Drop");
+        // Debug.Log("Trigger Enter Drop");
     }
 }
