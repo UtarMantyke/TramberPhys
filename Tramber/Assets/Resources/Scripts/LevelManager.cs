@@ -13,13 +13,14 @@ public class LevelManager : MonoBehaviour {
     public float absorbThreshouldTime = 0.4f;
 
 
-    [Title("Eye Control")]
-
-    
+    [Title("Eye Control")]    
     public GazePlotter gazePlotter; 
     public bool useEyeControl = false;
 
     [Title("Ship Control")]
+    public bool useGravity = true;
+
+    [ShowIf("useGravity", true)]
     public float shipGravity = 0.3f;
     public float enginePower = 1.0f;
 

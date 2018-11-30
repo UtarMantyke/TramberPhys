@@ -1,6 +1,7 @@
 ﻿using BindingsExample;
 using DG.Tweening;
 using InControl;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,8 +16,14 @@ public class ShipController : MonoBehaviour
     public GameObject fireRight;
     public GameObject forceThroughAnchor;
     public Flower flower;
+    public GameObject vacuumForceAttachPoint;
+    public GameObject mouseTarget;
+    public GameObject stick2;
 
+    [HideInInspector]
     public float engineStrenth = 15.0f;
+
+    public float targetDragStrent = 100.0f;
 
     bool canControl = true;
 
@@ -34,7 +41,14 @@ public class ShipController : MonoBehaviour
 
     private void Awake()
     {
-        GetComponent<Rigidbody2D>().gravityScale = LevelManager.Instance.shipGravity;
+        if(!LevelManager.Instance.useGravity)
+        {
+            GetComponent<Rigidbody2D>().gravityScale = 0;
+        }
+        else
+        {
+            GetComponent<Rigidbody2D>().gravityScale = LevelManager.Instance.shipGravity;
+        }        
         engineStrenth = LevelManager.Instance.enginePower;
     }
 
@@ -46,13 +60,21 @@ public class ShipController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         UpdateEngine();
         CheckIfOutOfScreen();
         SetAlpha(alpha);
+        //UpdateVacuumForce();
 
+    }
 
+    private void UpdateVacuumForce()
+    {
+        var dir = mouseTarget.transform.position - vacuumForceAttachPoint.transform.position;
+        dir.Normalize();
+        stick2.GetComponent<Rigidbody2D>().AddForceAtPosition(dir * targetDragStrent, vacuumForceAttachPoint.transform.position);
+        
     }
 
     void CheckIfOutOfScreen()

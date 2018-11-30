@@ -9,6 +9,8 @@ public class MouseTarget_FollowMouse : MonoBehaviour
 
     public Transform connectedTransform;
 
+    public GameObject gazePlot;
+
     // Update is called once per frame
     void Update()
     {
@@ -20,19 +22,20 @@ public class MouseTarget_FollowMouse : MonoBehaviour
         mousePositionInScreen.y = Mathf.Clamp(mousePositionInScreen.y, 0f, Camera.main.pixelHeight);
 
 
-        var targetPosi = mousePositionInScreen;
-        if(LevelManager.Instance.useEyeControl)
-        {
-            if(TobiiAPI.IsConnected)
-            {
-                GazePoint gazePoint = TobiiAPI.GetGazePoint();
-                targetPosi = gazePoint.Screen;
-            }
-        }
-            
+        var targetPosi = mousePositionInScreen;            
 
         //now translate this position to world coordinates
         Vector3 mousePositionInWorld = Camera.main.ScreenToWorldPoint(targetPosi);
+
+        if (LevelManager.Instance.useEyeControl)
+        {
+            if (TobiiAPI.IsConnected)
+            {
+                if(gazePlot)
+                    mousePositionInWorld = gazePlot.transform.position;
+            }
+        }
+
 
         //move the mouse target to the mouse position
         transform.position = mousePositionInWorld;        

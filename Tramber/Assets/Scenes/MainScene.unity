@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 86876706}
   - component: {fileID: 86876708}
   - component: {fileID: 86876709}
+  - component: {fileID: 86876707}
   m_Layer: 0
   m_Name: Stick2
   m_TagString: Untagged
@@ -142,6 +143,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1986069122}
+  - {fileID: 1152391905}
   m_Father: {fileID: 980877169}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -191,6 +193,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!231 &86876707
+SpringJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 86876704}
+  m_Enabled: 0
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 1288378031}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: -0.06563449, y: 1.6368039}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_AutoConfigureDistance: 0
+  m_Distance: 0.005
+  m_DampingRatio: 0.5
+  m_Frequency: 1000000
 --- !u!50 &86876708
 Rigidbody2D:
   serializedVersion: 4
@@ -224,7 +245,7 @@ DistanceJoint2D:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: -0.074151754, y: 1.5422457}
+  m_Anchor: {x: -0.0655849, y: 1.636482}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 0
   m_Distance: 0.005
@@ -1933,7 +1954,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 463814, guid: 14a53555be1186948a7459a8ed1394e8, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -1
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 463814, guid: 14a53555be1186948a7459a8ed1394e8, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1966,6 +1987,10 @@ Prefab:
     - target: {fileID: 178470, guid: 14a53555be1186948a7459a8ed1394e8, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11431766, guid: 14a53555be1186948a7459a8ed1394e8, type: 2}
+      propertyPath: VisualizationDistance
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14a53555be1186948a7459a8ed1394e8, type: 2}
@@ -2801,6 +2826,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1152391904
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1152391905}
+  m_Layer: 0
+  m_Name: ForceAttachPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1152391905
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1152391904}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.093, y: 1.529, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 86876705}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1246523532 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 11431766, guid: 14a53555be1186948a7459a8ed1394e8,
@@ -2815,8 +2868,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1288378033}
-  - component: {fileID: 1288378032}
   - component: {fileID: 1288378031}
+  - component: {fileID: 1288378032}
   m_Layer: 0
   m_Name: MouseTarget
   m_TagString: Untagged
@@ -2856,6 +2909,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connectedTransform: {fileID: 86876705}
+  gazePlot: {fileID: 1885840778}
+  eyeTest: {fileID: 0}
 --- !u!4 &1288378033
 Transform:
   m_ObjectHideFlags: 0
@@ -3246,7 +3301,11 @@ MonoBehaviour:
   fireRight: {fileID: 1830931954}
   forceThroughAnchor: {fileID: 325245226}
   flower: {fileID: 1097123827}
+  vacuumForceAttachPoint: {fileID: 1152391904}
+  mouseTarget: {fileID: 1288378029}
+  stick2: {fileID: 86876704}
   engineStrenth: 15
+  targetDragStrent: 100
 --- !u!1 &1756644814
 GameObject:
   m_ObjectHideFlags: 0
@@ -3278,6 +3337,7 @@ MonoBehaviour:
   absorbThreshouldTime: 0.4
   gazePlotter: {fileID: 1246523532}
   useEyeControl: 1
+  useGravity: 1
   shipGravity: 0.325
   enginePower: 15
   linerDrag: 1
@@ -3351,6 +3411,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1551399124491896, guid: 2f542a6d03701f2408f6d6935d9edea9,
     type: 2}
   m_PrefabInternal: {fileID: 2087619760}
+--- !u!1 &1885840778 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 178470, guid: 14a53555be1186948a7459a8ed1394e8,
+    type: 2}
+  m_PrefabInternal: {fileID: 741755925}
 --- !u!1 &1986069121
 GameObject:
   m_ObjectHideFlags: 0
