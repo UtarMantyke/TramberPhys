@@ -14,16 +14,16 @@ public class LevelManager : MonoBehaviour {
 
 
     [Title("Eye Control")]    
-    public GazePlotter gazePlotter; 
+    public GazePlotter gazePlotter;
+    public bool showGazePlot = true;
     public bool useEyeControl = false;
 
     [Title("Ship Control")]
     public bool useGravity = true;
 
-    [ShowIf("useGravity", true)]
+    [ShowIf("useGravity", true)]   
     public float shipGravity = 0.3f;
     public float enginePower = 1.0f;
-
     public float linerDrag = 1.0f;
     public float angularDrap = 1.0f;
 
@@ -32,7 +32,7 @@ public class LevelManager : MonoBehaviour {
     [Title("Basic")]
     public GameObject initPosi;
 
-   
+
 
     private static LevelManager _instance;
     public static LevelManager Instance
@@ -56,13 +56,13 @@ public class LevelManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-       gazePlotter.UseFilter = true;
+       gazePlotter.UseFilter = true;       
     }
 
     // Update is called once per frame
     void Update()
     {
         TobiiAPI.GetUserPresence();
-        
+        gazePlotter.GetComponent<SpriteRenderer>().enabled = showGazePlot;
     }
 }

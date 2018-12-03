@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Tobii.Gaming;
+using Tobii.Gaming.Internal;
 using UnityEngine;
 
 
@@ -11,8 +12,18 @@ public class MouseTarget_FollowMouse : MonoBehaviour
 
     public GameObject gazePlot;
 
+    bool tobiiIsConnected = true;
+
+    private void Update()
+    {
+
+        // don't know why TobiiAPI.IsConnected swing between false and true when it not connected
+        if (!TobiiAPI.IsConnected)
+            tobiiIsConnected = false;
+    }
+
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //get the mouse position in pixel coordinates
         Vector2 mousePositionInScreen = Input.mousePosition;
@@ -29,7 +40,7 @@ public class MouseTarget_FollowMouse : MonoBehaviour
 
         if (LevelManager.Instance.useEyeControl)
         {
-            if (TobiiAPI.IsConnected)
+            if (tobiiIsConnected)
             {
                 if(gazePlot)
                     mousePositionInWorld = gazePlot.transform.position;
