@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 2d7d3a2515d9151458c46f4470173b92
+timeCreated: 1507463409
+licenseType: Store
+ShaderImporter:
+  defaultTextures:
+  - _MainTex: {fileID: 2800000, guid: c6e26e3dc30676945802df6bc2054e29, type: 3}
+  - _Mask: {fileID: 2800000, guid: f58f979d1ca0aa449a5dca910eddee02, type: 3}
+  - _PotionBubbles: {fileID: 2800000, guid: 340dff9bb004e2f4bbac11da0df5709f, type: 3}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

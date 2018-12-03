@@ -64,7 +64,7 @@ public class ShipController : MonoBehaviour
     {
         UpdateEngine();
         CheckIfOutOfScreen();
-        SetAlpha(alpha);
+        // SetAlpha(alpha);
         //UpdateVacuumForce();
 
     }

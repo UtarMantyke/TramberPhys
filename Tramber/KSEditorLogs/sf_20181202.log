@@ -57,3 +57,107 @@
 2018-12-02 22:26:50.0951 [DEBUG] Scene Fusion version 1.8.1-4
 2018-12-02 22:28:02.1153 [DEBUG] Scene Fusion version 1.8.1-4
 2018-12-02 22:28:20.9384 [DEBUG] Scene Fusion version 1.8.1-4
+2018-12-02 22:47:33.9968 [DEBUG] Scene Fusion version 1.8.1-4
+2018-12-02 22:47:37.7238 [ERROR] ArgumentNullException: Argument cannot be null.
+Parameter name: shader
+UnityEngine.Material..ctor (UnityEngine.Shader shader) (at C:/buildslave/unity/build/Runtime/Export/Shader.bindings.cs:104)
+BlurController.get_material () (at Assets/Resources/Scripts/BlurController.cs:16)
+BlurController.DownSample4x (UnityEngine.RenderTexture source, UnityEngine.RenderTexture dest) (at Assets/Resources/Scripts/BlurController.cs:38)
+BlurController.OnRenderImage (UnityEngine.RenderTexture source, UnityEngine.RenderTexture destination) (at Assets/Resources/Scripts/BlurController.cs:53)
+
+2018-12-02 22:47:40.8071 [ERROR] ArgumentNullException: Argument cannot be null.
+Parameter name: shader
+UnityEngine.Material..ctor (UnityEngine.Shader shader) (at C:/buildslave/unity/build/Runtime/Export/Shader.bindings.cs:104)
+BlurController.get_material () (at Assets/Resources/Scripts/BlurController.cs:16)
+BlurController.DownSample4x (UnityEngine.RenderTexture source, UnityEngine.RenderTexture dest) (at Assets/Resources/Scripts/BlurController.cs:38)
+BlurController.OnRenderImage (UnityEngine.RenderTexture source, UnityEngine.RenderTexture destination) (at Assets/Resources/Scripts/BlurController.cs:53)
+
+2018-12-02 22:48:02.5200 [ERROR] ArgumentNullException: Argument cannot be null.
+Parameter name: shader
+UnityEngine.Material..ctor (UnityEngine.Shader shader) (at C:/buildslave/unity/build/Runtime/Export/Shader.bindings.cs:104)
+BlurController.get_material () (at Assets/Resources/Scripts/BlurController.cs:16)
+BlurController.DownSample4x (UnityEngine.RenderTexture source, UnityEngine.RenderTexture dest) (at Assets/Resources/Scripts/BlurController.cs:38)
+BlurController.OnRenderImage (UnityEngine.RenderTexture source, UnityEngine.RenderTexture destination) (at Assets/Resources/Scripts/BlurController.cs:53)
+
+2018-12-02 22:48:06.8880 [ERROR] ArgumentNullException: Argument cannot be null.
+Parameter name: shader
+UnityEngine.Material..ctor (UnityEngine.Shader shader) (at C:/buildslave/unity/build/Runtime/Export/Shader.bindings.cs:104)
+BlurController.get_material () (at Assets/Resources/Scripts/BlurController.cs:16)
+BlurController.DownSample4x (UnityEngine.RenderTexture source, UnityEngine.RenderTexture dest) (at Assets/Resources/Scripts/BlurController.cs:38)
+BlurController.OnRenderImage (UnityEngine.RenderTexture source, UnityEngine.RenderTexture destination) (at Assets/Resources/Scripts/BlurController.cs:53)
+
+2018-12-02 22:48:10.3034 [ERROR] ArgumentNullException: Argument cannot be null.
+Parameter name: shader
+UnityEngine.Material..ctor (UnityEngine.Shader shader) (at C:/buildslave/unity/build/Runtime/Export/Shader.bindings.cs:104)
+BlurController.get_material () (at Assets/Resources/Scripts/BlurController.cs:16)
+BlurController.DownSample4x (UnityEngine.RenderTexture source, UnityEngine.RenderTexture dest) (at Assets/Resources/Scripts/BlurController.cs:38)
+BlurController.OnRenderImage (UnityEngine.RenderTexture source, UnityEngine.RenderTexture destination) (at Assets/Resources/Scripts/BlurController.cs:53)
+
+2018-12-02 22:48:13.2790 [ERROR] ArgumentNullException: Argument cannot be null.
+Parameter name: shader
+UnityEngine.Material..ctor (UnityEngine.Shader shader) (at C:/buildslave/unity/build/Runtime/Export/Shader.bindings.cs:104)
+BlurController.get_material () (at Assets/Resources/Scripts/BlurController.cs:16)
+BlurController.DownSample4x (UnityEngine.RenderTexture source, UnityEngine.RenderTexture dest) (at Assets/Resources/Scripts/BlurController.cs:38)
+BlurController.OnRenderImage (UnityEngine.RenderTexture source, UnityEngine.RenderTexture destination) (at Assets/Resources/Scripts/BlurController.cs:53)
+
+2018-12-02 22:48:15.9193 [ERROR] ArgumentNullException: Argument cannot be null.
+Parameter name: shader
+UnityEngine.Material..ctor (UnityEngine.Shader shader) (at C:/buildslave/unity/build/Runtime/Export/Shader.bindings.cs:104)
+BlurController.get_material () (at Assets/Resources/Scripts/BlurController.cs:16)
+BlurController.DownSample4x (UnityEngine.RenderTexture source, UnityEngine.RenderTexture dest) (at Assets/Resources/Scripts/BlurController.cs:38)
+BlurController.OnRenderImage (UnityEngine.RenderTexture source, UnityEngine.RenderTexture destination) (at Assets/Resources/Scripts/BlurController.cs:53)
+
+2018-12-02 22:48:21.6761 [ERROR] ArgumentNullException: Argument cannot be null.
+Parameter name: shader
+UnityEngine.Material..ctor (UnityEngine.Shader shader) (at C:/buildslave/unity/build/Runtime/Export/Shader.bindings.cs:104)
+BlurController.get_material () (at Assets/Resources/Scripts/BlurController.cs:16)
+BlurController.DownSample4x (UnityEngine.RenderTexture source, UnityEngine.RenderTexture dest) (at Assets/Resources/Scripts/BlurController.cs:38)
+BlurController.OnRenderImage (UnityEngine.RenderTexture source, UnityEngine.RenderTexture destination) (at Assets/Resources/Scripts/BlurController.cs:53)
+
+2018-12-02 23:17:16.2222 [DEBUG] Scene Fusion version 1.8.1-4
+2018-12-02 23:17:16.4456 [DEBUG] Play mode: True, sync in play mode: False
+2018-12-02 23:17:20.6065 [DEBUG] Play mode: False
+2018-12-02 23:18:37.2380 [DEBUG] Scene Fusion version 1.8.1-4
+2018-12-02 23:18:37.4717 [DEBUG] Play mode: True, sync in play mode: False
+2018-12-02 23:18:38.5181 [DEBUG] Play mode: False
+2018-12-02 23:25:36.7613 [DEBUG] Scene Fusion version 1.8.1-4
+2018-12-02 23:25:36.9972 [DEBUG] Play mode: True, sync in play mode: False
+2018-12-02 23:25:38.7089 [DEBUG] Play mode: False
+2018-12-02 23:25:58.3969 [DEBUG] Scene Fusion version 1.8.1-4
+2018-12-02 23:25:58.6391 [DEBUG] Play mode: True, sync in play mode: False
+2018-12-02 23:26:10.4988 [DEBUG] Play mode: False
+2018-12-02 23:32:15.0589 [DEBUG] Scene Fusion version 1.8.1-4
+2018-12-02 23:32:15.2993 [DEBUG] Play mode: True, sync in play mode: False
+2018-12-02 23:32:42.5242 [DEBUG] Play mode: False
+2018-12-02 23:32:55.5824 [DEBUG] Scene Fusion version 1.8.1-4
+2018-12-02 23:32:55.7519 [DEBUG] Play mode: True, sync in play mode: False
+2018-12-02 23:34:00.8656 [DEBUG] Play mode: False
+2018-12-02 23:34:18.6748 [DEBUG] Scene Fusion version 1.8.1-4
+2018-12-02 23:34:18.8463 [DEBUG] Play mode: True, sync in play mode: False
+2018-12-02 23:34:48.7949 [DEBUG] Play mode: False
+2018-12-02 23:34:56.2620 [DEBUG] Scene Fusion version 1.8.1-4
+2018-12-02 23:34:56.4515 [DEBUG] Play mode: True, sync in play mode: False
+2018-12-02 23:35:27.3525 [DEBUG] Play mode: False
+2018-12-02 23:37:40.8021 [DEBUG] Scene Fusion version 1.8.1-4
+2018-12-02 23:37:40.9946 [DEBUG] Play mode: True, sync in play mode: False
+2018-12-02 23:38:41.5394 [DEBUG] Play mode: False
+2018-12-02 23:39:32.2178 [DEBUG] Scene Fusion version 1.8.1-4
+2018-12-02 23:39:32.3894 [DEBUG] Play mode: True, sync in play mode: False
+2018-12-02 23:41:08.1648 [DEBUG] Play mode: False
+2018-12-02 23:57:06.5446 [DEBUG] Scene Fusion version 1.8.1-4
+2018-12-02 23:57:06.7291 [DEBUG] Play mode: True, sync in play mode: False
+2018-12-02 23:57:11.7236 [DEBUG] Play mode: False
+2018-12-02 23:57:50.2142 [DEBUG] Scene Fusion version 1.8.1-4
+2018-12-02 23:57:50.4076 [DEBUG] Play mode: True, sync in play mode: False
+2018-12-02 23:58:00.6586 [DEBUG] Play mode: False
+2018-12-02 23:58:23.9059 [DEBUG] Scene Fusion version 1.8.1-4
+2018-12-02 23:58:24.0590 [DEBUG] Play mode: True, sync in play mode: False
+2018-12-02 23:58:30.6699 [DEBUG] Play mode: False
+2018-12-02 23:58:40.5513 [DEBUG] Scene Fusion version 1.8.1-4
+2018-12-02 23:58:40.7299 [DEBUG] Play mode: True, sync in play mode: False
+2018-12-02 23:58:44.0271 [DEBUG] Play mode: False
+2018-12-02 23:58:59.0040 [DEBUG] Scene Fusion version 1.8.1-4
+2018-12-02 23:58:59.1825 [DEBUG] Play mode: True, sync in play mode: False
+2018-12-02 23:59:03.1419 [DEBUG] Play mode: False
+2018-12-02 23:59:39.5441 [DEBUG] Scene Fusion version 1.8.1-4
+2018-12-02 23:59:39.7485 [DEBUG] Play mode: True, sync in play mode: False
