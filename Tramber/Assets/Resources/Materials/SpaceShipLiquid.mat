@@ -69,14 +69,14 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _Emissivepower: 6.42
-    - _Fullness: 0.97
+    - _Fullness: 1
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _Maskpower: 0.3
     - _Metallic: 0
     - _Mode: 0
-    - _NumberofWaves: 15.57
+    - _NumberofWaves: 60
     - _OcclusionStrength: 1
     - _Opacitypower: 1
     - _Parallax: 0.02
@@ -86,7 +86,7 @@ Material:
     - _Speedofbubbles: 0.3
     - _SrcBlend: 1
     - _UVSec: 0
-    - _Wavessize: 23.3
+    - _Wavessize: 40
     - _Wavesspeed: 4.2
     - _ZWrite: 1
     m_Colors:

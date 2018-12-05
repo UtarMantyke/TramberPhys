@@ -23,10 +23,10 @@ public class ShipController : MonoBehaviour
     [HideInInspector]
     public float engineStrenth = 15.0f;
 
-    public float targetDragStrent = 100.0f;
+
+    public float fullness;
 
     bool canControl = true;
-
     bool inRestart = false;
 
 
@@ -55,7 +55,6 @@ public class ShipController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
         playerActions = MyPlayerActions.CreateWithDefaultBindings();
     }
 
@@ -65,17 +64,8 @@ public class ShipController : MonoBehaviour
         UpdateEngine();
         CheckIfOutOfScreen();
         // SetAlpha(alpha);
-        //UpdateVacuumForce();
-
     }
 
-    private void UpdateVacuumForce()
-    {
-        var dir = mouseTarget.transform.position - vacuumForceAttachPoint.transform.position;
-        dir.Normalize();
-        stick2.GetComponent<Rigidbody2D>().AddForceAtPosition(dir * targetDragStrent, vacuumForceAttachPoint.transform.position);
-        
-    }
 
     void CheckIfOutOfScreen()
     {
