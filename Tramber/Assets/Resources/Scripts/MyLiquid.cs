@@ -16,12 +16,9 @@ public class MyLiquid : MonoBehaviour {
 		
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
-    private void FixedUpdate()
+
+    private void Update()
     {
         this.transform.eulerAngles = Vector3.zero;
 

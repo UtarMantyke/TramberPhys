@@ -18,7 +18,7 @@ public class VacuumSensor : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Trigger Enter Vacuum");
+        // Debug.Log("Trigger Enter Vacuum");
 
         var drop = other.gameObject.GetComponent<Drop>();
         var flower = other.gameObject.GetComponent<Flower>();

@@ -19,11 +19,12 @@ public class ShipController : MonoBehaviour
     public GameObject vacuumForceAttachPoint;
     public GameObject mouseTarget;
     public GameObject stick2;
+    public GameObject bottomLiquidBkg;
 
     [HideInInspector]
     public float engineStrenth = 15.0f;
 
-
+    [Range(0, 1)]
     public float fullness;
 
     bool canControl = true;
@@ -58,12 +59,29 @@ public class ShipController : MonoBehaviour
         playerActions = MyPlayerActions.CreateWithDefaultBindings();
     }
 
+    private void Update()
+    {
+        CheckIfOutOfScreen();
+        SetAlpha(alpha);
+        UpdateBottomVisibility();
+    }
+
+    void UpdateBottomVisibility()
+    {
+        if(fullness > 0)
+        {
+            bottomLiquidBkg.GetComponent<MyTransparent>().Alpha = 0;
+        }
+        else
+        {
+            bottomLiquidBkg.GetComponent<MyTransparent>().Alpha = 1;
+        }
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
-        UpdateEngine();
-        CheckIfOutOfScreen();
-        // SetAlpha(alpha);
+        UpdateEngine();        
     }
 
 
@@ -106,7 +124,18 @@ public class ShipController : MonoBehaviour
         foreach (SpriteRenderer child in children)
         {
             newColor = child.color;
-            newColor.a = alpha;
+
+            // some sprite need to have their own alpha
+            var myTrans = child.GetComponent<MyTransparent>();
+            if(myTrans)
+            {
+                newColor.a = myTrans.Alpha * alpha;
+            }
+            else
+            {            
+                newColor.a = alpha;
+            }
+
             child.color = newColor;
         }
     }
