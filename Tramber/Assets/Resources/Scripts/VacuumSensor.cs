@@ -6,6 +6,7 @@ public class VacuumSensor : MonoBehaviour {
 
     public ShipController shipController;
 
+
 	// Use this for initialization
 	void Start () {
 		
@@ -24,12 +25,24 @@ public class VacuumSensor : MonoBehaviour {
         var flower = other.gameObject.GetComponent<Flower>();
         if (drop)
         {
-            drop.Sensor = this;
-            drop.OnAbsorbed += Absorbed;
+            drop.Sensor = this;   
+            
+            if(!drop.subscribed)
+            {
+                drop.OnAbsorbed += Absorbed;
+                drop.OnSucked += shipController.GainLiquid;
+                drop.subscribed = true;
+            }            
         }
         else if(flower)
         {
-            flower.OnFeeded += Feeded;
+            if(!flower.subscribed)
+            {
+                flower.OnFeeded += shipController.Feeded;
+                flower.OnGive += shipController.Gived;
+                flower.subscribed = true;
+            }
+                
         }
 
     }
@@ -39,16 +52,12 @@ public class VacuumSensor : MonoBehaviour {
         if (!dp)
             return;
 
-        var type = dp.type;
+        var type = dp.type;        
         
-        shipController.CurrentCarriedDrop = type;
         Destroy(dp);
     }
 
-    public void Feeded(Flower fl)
-    {
-        shipController.CurrentCarriedDrop = DROP_TYPE.NONE;
-    }
+ 
 
     private void OnTriggerStay2D(Collider2D other)
     {
@@ -58,8 +67,8 @@ public class VacuumSensor : MonoBehaviour {
         if(drop)
         {
             // already have one loaded
-            if (shipController.CurrentCarriedDrop != DROP_TYPE.NONE)
-                return;
+            //if (shipController.CurrentCarriedDrop != DROP_TYPE.NONE)
+            //    return;
 
             var type = drop.type;
             if (shipController.flower.CurrentNeedDrop == type)

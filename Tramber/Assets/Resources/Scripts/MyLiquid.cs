@@ -11,12 +11,35 @@ public class MyLiquid : MonoBehaviour {
     public GameObject rightTop;
     public GameObject rightBottom;
 
+    public Material waterMat;
+    public Material sunMat;
+    public Material oxygenMat;
+
+    public GameObject innerLiquid;
+
     // Use this for initialization
     void Start () {
 		
 	}
 	
+    public void SetMaterialType(DROP_TYPE type)
+    {
+        var mat = waterMat;
+        if (type == DROP_TYPE.WATER)
+        {
+            mat = waterMat;
+        }
+        else if (type == DROP_TYPE.SUNSHINE)
+        {
+            mat = sunMat;
+        }
+        else if (type == DROP_TYPE.O2)
+        {
+            mat = oxygenMat;
+        }
 
+        innerLiquid.GetComponent<SpriteRenderer>().material = mat;
+    }
 
     private void Update()
     {

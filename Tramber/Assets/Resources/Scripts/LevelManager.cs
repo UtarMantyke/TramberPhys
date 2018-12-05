@@ -12,6 +12,10 @@ public class LevelManager : MonoBehaviour {
     public float absorbThreshouldRatio = 0.2f;
     public float absorbThreshouldTime = 0.4f;
 
+    public float dropMaxHealth = 100.0f;
+    public float timeToAbsorb = 3.0f;
+
+
 
     [Title("Eye Control")]    
     public GazePlotter gazePlotter;

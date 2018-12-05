@@ -20,11 +20,15 @@ public class Drop : MonoBehaviour {
     [EnumToggleButtons]
     public DROP_TYPE type;
 
-    float health = 100.0f;
-    float maxHealth = 100.0f;
-    float timeToAbsorb = 3.0f;
+    [DisableInEditorMode]
+    public float health = 100.0f;
 
     public event Action<Drop> OnAbsorbed;
+    public event MyOutAction OnSucked;
+
+    public int suckedTime = 0;
+
+    public delegate void MyOutAction(Drop dp, float in1, out float out1);
 
     VacuumSensor sensor;
     public VacuumSensor Sensor
@@ -33,6 +37,14 @@ public class Drop : MonoBehaviour {
         set { sensor = value; }
     }
 
+    public bool subscribed = false;
+
+    private void Awake()
+    {
+        health = LevelManager.Instance.dropMaxHealth;
+
+
+    }
 
     // Use this for initialization
     void Start () {
@@ -43,7 +55,7 @@ public class Drop : MonoBehaviour {
 	void Update () {
 
         
-        this.transform.localScale = (health / maxHealth) * Vector3.one;
+        this.transform.localScale = (health / LevelManager.Instance.dropMaxHealth) * Vector3.one;
 	}
 
     bool inDestroying = false;
@@ -52,10 +64,34 @@ public class Drop : MonoBehaviour {
         if (inDestroying)
             return;
 
-        health -= Time.deltaTime * maxHealth / timeToAbsorb;
+        var delta = Time.deltaTime * LevelManager.Instance.dropMaxHealth / LevelManager.Instance.timeToAbsorb;
 
-        if(health / maxHealth < LevelManager.Instance.absorbThreshouldRatio)
+        float reallySucked;
+        
+        OnSucked.Invoke(this, delta, out reallySucked);
+
+
+        if (reallySucked > 0)
+            suckedTime++;
+
+
+        bool needAdjust = false;
+        if(delta != reallySucked)
         {
+
+            needAdjust = true;
+        }
+
+        health -= reallySucked;
+
+
+       
+        float ratio = health / LevelManager.Instance.dropMaxHealth;
+
+        float diff = health - LevelManager.Instance.dropMaxHealth * LevelManager.Instance.absorbThreshouldRatio;
+        
+        if (diff <= 0 || ( needAdjust && Mathf.Abs(diff) < 0.001f))
+        {  
             inDestroying = true;
             var seq = DOTween.Sequence();
             seq.Append(DOTween.To(()=> health, x=> health = x, 0, LevelManager.Instance.absorbThreshouldTime));

@@ -1,6 +1,7 @@
 ﻿using BindingsExample;
 using DG.Tweening;
 using InControl;
+using Sirenix.OdinInspector;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -20,6 +21,7 @@ public class ShipController : MonoBehaviour
     public GameObject mouseTarget;
     public GameObject stick2;
     public GameObject bottomLiquidBkg;
+    public MyLiquid myLiquid;
 
     [HideInInspector]
     public float engineStrenth = 15.0f;
@@ -31,7 +33,22 @@ public class ShipController : MonoBehaviour
     bool inRestart = false;
 
 
-    private float alpha = 1;
+    float alpha = 1;
+    [SerializeField]
+    [DisableInEditorMode]    
+    float liquidAmount = 0;
+
+    public int suckedTime = 0;
+
+    public DROP_TYPE CurrentNeedDrop
+    {
+        get
+        {
+            return flower.CurrentNeedDrop;
+        }
+    }
+
+
 
     DROP_TYPE currentCarriedDrop = DROP_TYPE.NONE;
     public DROP_TYPE CurrentCarriedDrop
@@ -64,7 +81,10 @@ public class ShipController : MonoBehaviour
         CheckIfOutOfScreen();
         SetAlpha(alpha);
         UpdateBottomVisibility();
+        UpdateLiquid();
     }
+
+
 
     void UpdateBottomVisibility()
     {
@@ -102,6 +122,10 @@ public class ShipController : MonoBehaviour
 
             float dt = 0.3f;
             transform.localEulerAngles = Vector3.zero;
+
+            fireLeft.SetActive(false);
+            fireRight.SetActive(false);
+
             var seq = DOTween.Sequence();
             seq.Append(DOTween.To(() => alpha, x => alpha = x, 0, dt));
             seq.Append(DOTween.To(() => alpha, x => alpha = x, 1, dt));
@@ -139,6 +163,7 @@ public class ShipController : MonoBehaviour
             child.color = newColor;
         }
     }
+
 
     void UpdateEngine()
     {
@@ -184,6 +209,51 @@ public class ShipController : MonoBehaviour
         }
     }
 
+    public void Feeded(Flower fl)
+    {
+        CurrentCarriedDrop = DROP_TYPE.NONE;
+        liquidAmount = 0;
+    }
 
-    
+
+    public void GainLiquid(Drop drop, float amount, out float reallyGain)
+    {
+        reallyGain = 0;
+
+        if (!drop)
+            return;
+
+        var type = drop.type;
+        if(type != CurrentNeedDrop)
+            return;
+
+        reallyGain = amount;
+        var max = LevelManager.Instance.dropMaxHealth * (1 - LevelManager.Instance.absorbThreshouldRatio);
+
+        if (liquidAmount + amount >= max)
+        {
+            reallyGain = amount - (liquidAmount + amount - max);
+            CurrentCarriedDrop = type;
+         
+        }
+        liquidAmount += reallyGain;
+    }
+
+
+    // liquidAmount - > fullness
+    private void UpdateLiquid()
+    {
+        var max = LevelManager.Instance.dropMaxHealth * (1 - LevelManager.Instance.absorbThreshouldRatio);
+        var ratio = liquidAmount / max;
+
+        fullness = ratio;
+    }
+
+    // gived something to flower
+    public void Gived(float gived)
+    {
+        liquidAmount -= gived;
+        if (liquidAmount < 0)
+            liquidAmount = 0;
+    }
 }
