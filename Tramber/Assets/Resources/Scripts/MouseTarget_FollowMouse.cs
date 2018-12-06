@@ -11,6 +11,7 @@ public class MouseTarget_FollowMouse : MonoBehaviour
     public Transform connectedTransform;
 
     public GameObject gazePlot;
+    public Vector3 preferredPosi;
 
     bool tobiiIsConnected = true;
 
@@ -46,7 +47,7 @@ public class MouseTarget_FollowMouse : MonoBehaviour
                     mousePositionInWorld = gazePlot.transform.position;
             }
         }
-
+        preferredPosi = mousePositionInWorld;
 
         //move the mouse target to the mouse position
         transform.position = mousePositionInWorld;        

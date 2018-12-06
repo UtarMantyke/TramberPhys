@@ -2399,6 +2399,7 @@ GameObject:
   m_Component:
   - component: {fileID: 816999714}
   - component: {fileID: 816999715}
+  - component: {fileID: 816999716}
   m_Layer: 0
   m_Name: Planet
   m_TagString: Untagged
@@ -2466,6 +2467,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &816999716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 816999713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7046c528ac3831b47b3239d4fdc65ca0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eyeRoot: {fileID: 1443140277}
+  eye1: {fileID: 221533501}
+  eye2: {fileID: 972792256}
 --- !u!1001 &863332100
 Prefab:
   m_ObjectHideFlags: 0
@@ -3947,6 +3962,7 @@ MonoBehaviour:
   linerDrag: 1
   angularDrap: 1
   initPosi: {fileID: 231335148}
+  mouseTarget: {fileID: 0}
 --- !u!4 &1756644816
 Transform:
   m_ObjectHideFlags: 0

@@ -35,6 +35,7 @@ public class LevelManager : MonoBehaviour {
 
     [Title("Basic")]
     public GameObject initPosi;
+    public GameObject mouseTarget;
 
 
 
