@@ -33,7 +33,7 @@ public class ShipController : MonoBehaviour
     bool inRestart = false;
 
 
-    float alpha = 1;
+    public float alpha = 1;
     [SerializeField]
     [DisableInEditorMode]    
     float liquidAmount = 0;
@@ -59,7 +59,8 @@ public class ShipController : MonoBehaviour
 
     private void Awake()
     {
-        if(!LevelManager.Instance.useGravity)
+        ForceUpdateAlpha();
+        if (!LevelManager.Instance.useGravity)
         {
             GetComponent<Rigidbody2D>().gravityScale = 0;
         }
@@ -139,6 +140,29 @@ public class ShipController : MonoBehaviour
                 shipBody.bodyType = RigidbodyType2D.Dynamic;                
             });
         }
+    }
+
+    public void TransitionFadeIn()
+    {
+        float dt = 0.3f;
+
+        var seq = DOTween.Sequence();
+
+        seq.Append(DOTween.To(() => alpha, x => alpha = x, 1, dt));
+        seq.Append(DOTween.To(() => alpha, x => alpha = x, 0, dt));
+        seq.Append(DOTween.To(() => alpha, x => alpha = x, 1, dt));
+        seq.Append(DOTween.To(() => alpha, x => alpha = x, 0, dt));
+        seq.Append(DOTween.To(() => alpha, x => alpha = x, 1, dt));
+        seq.AppendCallback(() =>
+        {
+            LevelManager.Instance.SetNeedPlanetScare(true);
+        });
+        seq.Play();
+    }
+
+    public void ForceUpdateAlpha()
+    {
+        SetAlpha(alpha);
     }
 
     public void SetAlpha(float alpha)

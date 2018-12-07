@@ -30,6 +30,9 @@ public class Eyes : MonoBehaviour {
 
     void UpdateEyeLook()
     {
+        if (!LevelManager.Instance.NeedPlanetStare)
+            return;
+
         Vector2 targetPosi = mouseTarget.GetComponent<MouseTarget_FollowMouse>().preferredPosi;
         Vector2 centerPosi = this.transform.position;
         Vector2 eye2Posi = eye2.transform.position;

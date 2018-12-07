@@ -21,6 +21,13 @@ public class LevelManager : MonoBehaviour {
     public GazePlotter gazePlotter;
     public bool showGazePlot = true;
     public bool useEyeControl = false;
+    [SerializeField]
+    private bool needPlanetStare = false;
+    public bool NeedPlanetStare
+    {
+        get { return needPlanetStare; }
+        set { needPlanetStare = value; }
+    }
 
     [Title("Ship Control")]
     public bool useGravity = true;
@@ -36,6 +43,7 @@ public class LevelManager : MonoBehaviour {
     [Title("Basic")]
     public GameObject initPosi;
     public GameObject mouseTarget;
+    public PlayMakerFSM transitionFSM;
 
 
 
@@ -69,5 +77,15 @@ public class LevelManager : MonoBehaviour {
     {
         TobiiAPI.GetUserPresence();
         gazePlotter.GetComponent<SpriteRenderer>().enabled = showGazePlot;
+    }
+
+    public void StartCLicked()
+    {
+        transitionFSM.SendEvent("TRANSITION_TO_SCENE");
+    }
+
+    public void SetNeedPlanetScare(bool f)
+    {
+        NeedPlanetStare = f;
     }
 }

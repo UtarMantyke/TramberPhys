@@ -92,4 +92,4 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Maskcolor: {r: 0, g: 0.97916675, b: 1, a: 1}
+    - _Maskcolor: {r: 0, g: 0.98039216, b: 1, a: 1}
