@@ -21,14 +21,14 @@ public class Drop : MonoBehaviour {
     public DROP_TYPE type;
 
     [DisableInEditorMode]
-    public float health = 100.0f;
+    public int health = 100;
 
     public event Action<Drop> OnAbsorbed;
     public event MyOutAction OnSucked;
 
     public int suckedTime = 0;
 
-    public delegate void MyOutAction(Drop dp, float in1, out float out1);
+    public delegate void MyOutAction(Drop dp, int in1, out int out1);
 
     VacuumSensor sensor;
     public VacuumSensor Sensor
@@ -55,42 +55,44 @@ public class Drop : MonoBehaviour {
 	void Update () {
 
         
-        this.transform.localScale = (health / LevelManager.Instance.dropMaxHealth) * Vector3.one;
+        this.transform.localScale = ((float)health / LevelManager.Instance.dropMaxHealth) * Vector3.one;
 	}
+
+    float tempDelta;
 
     bool inDestroying = false;
     public void TouchVacuum()
     {
         if (inDestroying)
             return;
-
+               
         var delta = Time.deltaTime * LevelManager.Instance.dropMaxHealth / LevelManager.Instance.timeToAbsorb;
+        tempDelta += delta;
+        int nT = (int)tempDelta;
 
-        float reallySucked;
+        int reallySucked;
         
-        OnSucked.Invoke(this, delta, out reallySucked);
+        OnSucked.Invoke(this, nT, out reallySucked);
+        if (nT > 0)
+            tempDelta = 0;
 
 
-        if (reallySucked > 0)
-            suckedTime++;
+        //if (reallySucked > 0)
+        //    suckedTime++;
 
-
-        bool needAdjust = false;
-        if(delta != reallySucked)
-        {
-
-            needAdjust = true;
-        }
+        //bool needAdjust = false;
+        //if(nT != reallySucked)
+        //{
+        //    needAdjust = true;
+        //}
 
         health -= reallySucked;
-
-
-       
-        float ratio = health / LevelManager.Instance.dropMaxHealth;
-
-        float diff = health - LevelManager.Instance.dropMaxHealth * LevelManager.Instance.absorbThreshouldRatio;
-        
-        if (diff <= 0 || ( needAdjust && Mathf.Abs(diff) < 0.001f))
+               
+        //float ratio = health / LevelManager.Instance.dropMaxHealth;
+        //float diff = health - LevelManager.Instance.dropMaxHealth * LevelManager.Instance.absorbThreshouldRatio;        
+        //if (diff <= 0 || ( needAdjust && Mathf.Abs(diff) < 0.001f))
+        int threshouldHealth = (int) (LevelManager.Instance.dropMaxHealth * LevelManager.Instance.absorbThreshouldRatio);
+        if (health <= threshouldHealth)
         {  
             inDestroying = true;
             var seq = DOTween.Sequence();

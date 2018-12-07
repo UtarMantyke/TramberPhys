@@ -36,7 +36,7 @@ public class ShipController : MonoBehaviour
     public float alpha = 1;
     [SerializeField]
     [DisableInEditorMode]    
-    float liquidAmount = 0;
+    int liquidAmount = 0;
 
     public int suckedTime = 0;
 
@@ -240,7 +240,7 @@ public class ShipController : MonoBehaviour
     }
 
 
-    public void GainLiquid(Drop drop, float amount, out float reallyGain)
+    public void GainLiquid(Drop drop, int amount, out int reallyGain)
     {
         reallyGain = 0;
 
@@ -252,17 +252,16 @@ public class ShipController : MonoBehaviour
             return;
 
         reallyGain = amount;
-        var max = LevelManager.Instance.dropMaxHealth * (1 - LevelManager.Instance.absorbThreshouldRatio);
+        var max = LevelManager.Instance.dropMaxHealth - 
+            (int)(LevelManager.Instance.dropMaxHealth  * LevelManager.Instance.absorbThreshouldRatio);
 
         if (liquidAmount + amount >= max)
         {
             reallyGain = amount - (liquidAmount + amount - max);
-            CurrentCarriedDrop = type;
-         
+            CurrentCarriedDrop = type;         
         }
         liquidAmount += reallyGain;
     }
-
 
     // liquidAmount - > fullness
     private void UpdateLiquid()
@@ -274,10 +273,15 @@ public class ShipController : MonoBehaviour
     }
 
     // gived something to flower
-    public void Gived(float gived)
+    public void Gived(int gived)
     {
         liquidAmount -= gived;
         if (liquidAmount < 0)
             liquidAmount = 0;
+    }
+
+    void FullShine()
+    {
+
     }
 }

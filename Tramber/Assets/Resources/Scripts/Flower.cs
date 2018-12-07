@@ -18,7 +18,7 @@ public class Flower : MonoBehaviour {
         set { currentNeedDrop = value; }
     }
 
-    public Action<float> OnGive;
+    public Action<int> OnGive;
 
     public Sprite[] dropSprites;
 
@@ -48,14 +48,24 @@ public class Flower : MonoBehaviour {
     }
 
     float health = 100.0f;
-   
+
+
+    float tempDelta;
     public void TouchVacuum()
     {
         var delta = Time.deltaTime * LevelManager.Instance.dropMaxHealth / LevelManager.Instance.timeToAbsorb;
-        health -= delta;
-        OnGive(delta);
 
-        if (health / LevelManager.Instance.dropMaxHealth < LevelManager.Instance.absorbThreshouldRatio)
+
+        tempDelta += delta;
+        int nT = (int)tempDelta;
+        if (nT > 0)
+            tempDelta = 0;
+
+        health -= nT;
+        OnGive(nT);
+
+        int threshould = (int) (LevelManager.Instance.dropMaxHealth *  LevelManager.Instance.absorbThreshouldRatio);
+        if (health <= threshould)
         {
             var seq = DOTween.Sequence();
             OnFeeded.Invoke(this);
@@ -67,7 +77,5 @@ public class Flower : MonoBehaviour {
                 SetNeedType();
             });
         }
-
-
     }
 }

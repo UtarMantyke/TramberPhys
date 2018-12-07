@@ -41,6 +41,11 @@ public class MyLiquid : MonoBehaviour {
         innerLiquid.GetComponent<SpriteRenderer>().material = mat;
     }
 
+    public void FullShine()
+    {
+
+    }
+
     private void Update()
     {
         this.transform.eulerAngles = Vector3.zero;
