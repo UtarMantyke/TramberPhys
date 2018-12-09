@@ -48,14 +48,12 @@ public class Flower : MonoBehaviour {
     }
 
     float health = 100.0f;
-
-
+    
     float tempDelta;
     public void TouchVacuum()
     {
         var delta = Time.deltaTime * LevelManager.Instance.dropMaxHealth / LevelManager.Instance.timeToAbsorb;
-
-
+        
         tempDelta += delta;
         int nT = (int)tempDelta;
         if (nT > 0)
