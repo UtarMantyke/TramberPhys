@@ -30,7 +30,15 @@ public class SpriteTransparentGroup : MonoBehaviour {
             var myTrans = child.GetComponent<MyTransparent>();
             if (myTrans)
             {
-                newColor.a = myTrans.Alpha * alpha;
+                if(myTrans.ignoreTransparentGroup)
+                {
+
+                }
+                else
+                {
+                    newColor.a = myTrans.Alpha * alpha;
+                }
+                
             }
             else
             {

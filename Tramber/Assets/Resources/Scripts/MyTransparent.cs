@@ -12,6 +12,8 @@ public class MyTransparent : MonoBehaviour {
         set { alpha = value; }
     }
 
+    public bool ignoreTransparentGroup = false;
+
     private void Awake()
     {
         var sr = GetComponent<SpriteRenderer>();

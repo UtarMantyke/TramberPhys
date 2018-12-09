@@ -10,3 +10,41 @@
 2018-12-09 00:41:34.6217 [DEBUG] Play mode: False
 2018-12-09 00:42:18.5345 [DEBUG] Scene Fusion version 1.8.1-4
 2018-12-09 00:43:24.2652 [DEBUG] Scene Fusion version 1.8.1-4
+2018-12-09 00:54:21.3806 [ERROR] NullReferenceException: Object reference not set to an instance of an object
+HutongGames.PlayMakerEditor.FsmBuilder.PasteStatesFromTemplate (.FsmTemplate template, Vector2 position) (at C:/Projects/Playmaker_1.9.0/Projects/Playmaker.source.unity/Assets/PlayMaker/Editor/Classes/FsmEditor.cs:1767)
+HutongGames.PlayMakerEditor.FsmBuilder.PasteStatesFromClipboard (Vector2 position) (at C:/Projects/Playmaker_1.9.0/Projects/Playmaker.source.unity/Assets/PlayMaker/Editor/Classes/FsmEditor.cs:1753)
+HutongGames.PlayMakerEditor.EditorCommands.PasteStates (Vector2 position) (at C:/Projects/Playmaker_1.9.0/Projects/Playmaker.source.unity/Assets/PlayMaker/Editor/Classes/FsmEditorContent.cs:14)
+HutongGames.PlayMakerEditor.EditorCommands.PasteStates () (at C:/Projects/Playmaker_1.9.0/Projects/Playmaker.source.unity/Assets/PlayMaker/Editor/Classes/FsmEditorContent.cs:13)
+HutongGames.PlayMakerEditor.FsmEditor.Paste () (at C:/Projects/Playmaker_1.9.0/Projects/Playmaker.source.unity/Assets/PlayMaker/Editor/Classes/FsmEditorGUILayout.cs:1404)
+HutongGames.PlayMakerEditor.FsmEditorWindow.DoGUI () (at Assets/PlayMaker/Editor/FsmEditorWindow.cs:177)
+HutongGames.PlayMakerEditor.BaseEditorWindow.OnGUI () (at C:/Projects/Playmaker_1.9.0/Projects/Playmaker.source.unity/Assets/PlayMaker/Editor/Classes/CanvasView.cs:605)
+System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) (at /Users/builduser/buildslave/mono/build/mcs/class/corlib/System.Reflection/MonoMethod.cs:222)
+Rethrow as TargetInvocationException: Exception has been thrown by the target of an invocation.
+System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) (at /Users/builduser/buildslave/mono/build/mcs/class/corlib/System.Reflection/MonoMethod.cs:232)
+System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) (at /Users/builduser/buildslave/mono/build/mcs/class/corlib/System.Reflection/MethodBase.cs:115)
+UnityEditor.HostView.Invoke (System.String methodName, System.Object obj) (at C:/buildslave/unity/build/Editor/Mono/HostView.cs:295)
+UnityEditor.HostView.Invoke (System.String methodName) (at C:/buildslave/unity/build/Editor/Mono/HostView.cs:288)
+UnityEditor.HostView.InvokeOnGUI (Rect onGUIPosition) (at C:/buildslave/unity/build/Editor/Mono/HostView.cs:255)
+
+2018-12-09 00:55:18.9471 [DEBUG] Scene Fusion version 1.8.1-4
+2018-12-09 00:55:19.1822 [DEBUG] Play mode: True, sync in play mode: False
+2018-12-09 00:55:40.4702 [DEBUG] Play mode: False
+2018-12-09 00:56:44.9804 [DEBUG] Scene Fusion version 1.8.1-4
+2018-12-09 00:56:45.2584 [DEBUG] Play mode: True, sync in play mode: False
+2018-12-09 00:56:54.1519 [DEBUG] Play mode: False
+2018-12-09 00:59:31.0989 [DEBUG] Scene Fusion version 1.8.1-4
+2018-12-09 00:59:31.2246 [DEBUG] Play mode: True, sync in play mode: False
+2018-12-09 01:00:26.6597 [DEBUG] Play mode: False
+2018-12-09 01:00:35.6241 [DEBUG] Scene Fusion version 1.8.1-4
+2018-12-09 01:00:35.8695 [DEBUG] Play mode: True, sync in play mode: False
+2018-12-09 01:00:44.5791 [DEBUG] Play mode: False
+2018-12-09 01:01:00.9361 [DEBUG] Scene Fusion version 1.8.1-4
+2018-12-09 01:01:01.2128 [DEBUG] Play mode: True, sync in play mode: False
+2018-12-09 01:01:38.6066 [DEBUG] Play mode: False
+2018-12-09 01:04:11.1071 [DEBUG] Scene Fusion version 1.8.1-4
+2018-12-09 01:05:36.1422 [DEBUG] Scene Fusion version 1.8.1-4
+2018-12-09 01:06:23.9507 [DEBUG] Scene Fusion version 1.8.1-4
+2018-12-09 01:11:33.1989 [DEBUG] Scene Fusion version 1.8.1-4
+2018-12-09 10:26:59.4706 [DEBUG] Scene Fusion version 1.8.1-4
+2018-12-09 10:26:59.7254 [DEBUG] Play mode: True, sync in play mode: False
+2018-12-09 10:28:47.3040 [DEBUG] Play mode: False

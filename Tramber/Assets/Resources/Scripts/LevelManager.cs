@@ -88,4 +88,6 @@ public class LevelManager : MonoBehaviour {
     {
         NeedPlanetStare = f;
     }
+
+ 
 }
