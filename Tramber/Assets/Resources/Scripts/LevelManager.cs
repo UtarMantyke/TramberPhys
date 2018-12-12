@@ -1,9 +1,10 @@
 ﻿using BindingsExample;
+using InControl;
 using Sirenix.OdinInspector;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Tobii.Gaming;
+
 using UnityEngine;
 using WindowsInput;
 using WindowsInput.Native;
@@ -112,20 +113,25 @@ public class LevelManager : MonoBehaviour {
     {
         if(!Paused)
             playTime += Time.deltaTime;
-        TobiiAPI.GetUserPresence();
+        Tobii.Gaming.TobiiAPI.GetUserPresence();
         gazePlotter.GetComponent<SpriteRenderer>().enabled = showGazePlot;
 
         // Debug.Log("Update");
+        CehckControllerStartClicked();
+
     }
 
-    private void FixedUpdate()
+    private void CehckControllerStartClicked()
     {
-        if(playerActions.Fire.WasPressed && startButton.activeSelf)
+
+        InControl.InputDevice device = InControl.InputManager.ActiveDevice;
+        InputControl control = device.GetControl(InputControlType.Action1);
+
+        if (control.WasPressed && startButton.activeSelf)
         {
             StartCLicked();
         }
-
-        // Debug.Log("FixedUpdate");
+        
     }
 
 

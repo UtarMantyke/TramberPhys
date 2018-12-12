@@ -283,6 +283,11 @@ public class ShipController : MonoBehaviour
         if(type != CurrentNeedDrop)
             return;
 
+        if(!playerActions.Suck.IsPressed)
+        {
+            return;
+        }
+
         reallyGain = amount;
         var max = LevelManager.Instance.dropMaxHealth - 
             (int)(LevelManager.Instance.dropMaxHealth  * LevelManager.Instance.absorbThreshouldRatio);

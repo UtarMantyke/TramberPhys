@@ -32,6 +32,8 @@ public class Eyes : MonoBehaviour {
     public Sprite[] normalEyes;
     public Sprite[] cuteEyes;
 
+    
+
     private void Awake()
     {
         mouseTarget = LevelManager.Instance.mouseTarget;
@@ -119,14 +121,15 @@ public class Eyes : MonoBehaviour {
         eye1.GetComponent<SpriteRenderer>().sprite = normalEyes[0];
         eye2.GetComponent<SpriteRenderer>().sprite = normalEyes[1];
 
-        var vac = LevelManager.Instance.ship.GetComponent<ShipController>().vacuum.GetComponent<VacuumSensor>();
+        var shipController = LevelManager.Instance.ship.GetComponent<ShipController>();
+        var vac = shipController.vacuum.GetComponent<VacuumSensor>();
         var go = vac.currentColliderGo;
         if(go)
         {
             var drop = go.GetComponent<Drop>();
             if(drop)
             {
-                if(drop.type == type)
+                if(drop.type == type && playerActions.Suck.IsPressed && shipController.flower.CurrentNeedDrop == type)
                 {
                     eye1.GetComponent<SpriteRenderer>().sprite = cuteEyes[0];
                     eye2.GetComponent<SpriteRenderer>().sprite = cuteEyes[1];
@@ -140,6 +143,7 @@ public class Eyes : MonoBehaviour {
     {
         if (!LevelManager.Instance.NeedPlanetStare)
             return;
+
 
         var beamBodySprite = beamBody.transform.GetComponent<SpriteRenderer>();
 

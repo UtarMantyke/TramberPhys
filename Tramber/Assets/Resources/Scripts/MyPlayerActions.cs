@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class MyPlayerActions : PlayerActionSet
 {
+    public PlayerAction Suck;
     public PlayerAction Fire;
-    
+
     public PlayerAction Left;
     public PlayerAction Right;
 
@@ -16,7 +17,8 @@ public class MyPlayerActions : PlayerActionSet
     public MyPlayerActions()
     {
         Fire = CreatePlayerAction("Fire");
-       
+        Suck = CreatePlayerAction("Suck");
+
         Left = CreatePlayerAction("Move Left");
         Right = CreatePlayerAction("Move Right");
     }
@@ -31,9 +33,12 @@ public class MyPlayerActions : PlayerActionSet
         // playerActions.Next.AddDefaultBinding( KeyCombo.With( Key.Tab ).AndNot( Key.Shift ) );
 
 
-        playerActions.Fire.AddDefaultBinding(InputControlType.Action1);
+        playerActions.Fire.AddDefaultBinding(InputControlType.Action2);
         playerActions.Fire.AddDefaultBinding(InputControlType.LeftBumper);
         playerActions.Fire.AddDefaultBinding(InputControlType.RightBumper);
+
+
+        playerActions.Suck.AddDefaultBinding(InputControlType.Action1);
 
         playerActions.Left.AddDefaultBinding(Key.LeftArrow);
         playerActions.Left.AddDefaultBinding(InputControlType.LeftTrigger);
