@@ -95,10 +95,17 @@ public class Eyes : MonoBehaviour {
             var length = Vector2.Distance(eye1.transform.position, targetPosi);
             length -= beamLengthFix;
 
+            if (!aimed)
+            {
+                length = 20;
+            }
+
             var beamBodySprite = beamBody.transform.GetComponent<SpriteRenderer>();
             var size = beamBodySprite.size;
             size.x = length;
             beamBodySprite.size = size;
+
+            
         }
         else
         {

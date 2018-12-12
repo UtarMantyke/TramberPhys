@@ -137,4 +137,6 @@ public class AsteroidLayer : MonoBehaviour {
     {
         destroyed = true;
     }
+
+   
 }
