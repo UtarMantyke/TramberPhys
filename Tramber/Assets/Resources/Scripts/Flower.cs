@@ -21,6 +21,8 @@ public class Flower : MonoBehaviour {
     public Action<int> OnGive;
 
     public Sprite[] dropSprites;
+    public Sprite[] creviceSprite;
+    public GameObject crevice;
 
     int[] seq = { 0,1,0, 2, 1, 0,};
     int seqIndex = 0;
@@ -29,8 +31,8 @@ public class Flower : MonoBehaviour {
 
     public bool subscribed = false;
 
-    private float maxBlood = 100;
-    private float blood;
+    private const int maxBlood = 10;
+    private int blood = maxBlood;
 
 
     // Use this for initialization
@@ -82,18 +84,37 @@ public class Flower : MonoBehaviour {
         }
     }
 
+    float lastTimeRecovered = -1;
+    public void AutoRecoverHealth()
+    {
+        if (LevelManager.Instance.playTime - lastTimeRecovered > LevelManager.Instance.flowerBloodRecoverInterval)
+        {
+            lastTimeRecovered = LevelManager.Instance.playTime;
+            blood++;
+            blood.Clamp(0, 10);
+        }
+    }
+
     public void GotDamaged()
     {
-        blood -= 10;
-        if(blood <=0)
-        {
-            blood = 0;
-        }
+        // only 11 sprites
 
+        // blood 10 -> sprite none -> index 0
+        // blood 9 -> Crevice_0.png -> index 1
+        // ...
+        // blood 0 -> Crevice_9.png -> index 10
+
+        // blood.Clamp(1, 3);
+
+        blood -= 1;
+        blood.Clamp(0, 10);
     }
 
     void RefreshCrevice()
     {
-        var ratio = (maxBlood - blood) / maxBlood;
+        if (blood > 10 || blood < 0)
+            return;
+
+        crevice.GetComponent<SpriteRenderer>().sprite = creviceSprite[10 - blood];
     }
 }

@@ -1,5 +1,6 @@
 ﻿using BindingsExample;
 using Sirenix.OdinInspector;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Tobii.Gaming;
@@ -23,7 +24,7 @@ public class LevelManager : MonoBehaviour {
     public GazePlotter gazePlotter;
     public bool showGazePlot = true;
     public bool useEyeControl = false;
-    [SerializeField]
+    
     private bool needPlanetStare = false;
     public bool NeedPlanetStare
     {
@@ -42,15 +43,21 @@ public class LevelManager : MonoBehaviour {
 
     [Title("Asteroid System")]
     public float asteroidSpawnInterval = 20;
-    public float aimRange = 3.0f;
+    public float aimRange = 2.0f;
     public float timeToDestory = 5.0f;
-    
+    public float flowerBloodRecoverInterval = 10;
+    public float laserAnimDur = 0.25f;
+    public float laserHeightMin = 0.5f;
+    public float laserHeightMax = 0.88f;
+
 
     [Title("Basic")]
     public GameObject initPosi;
     public GameObject mouseTarget;
     public GameObject flower;
     public GameObject asteroidLayer;
+    public GameObject ship;
+    public GameObject startButton;
     public PlayMakerFSM transitionFSM;
     public bool asteroidMode = false;
 
@@ -75,6 +82,8 @@ public class LevelManager : MonoBehaviour {
     InputSimulator IS;
 
 
+    MyPlayerActions playerActions;
+
     void Awake()
     {
         if (_instance != null)
@@ -91,6 +100,7 @@ public class LevelManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        playerActions = LevelManager.Instance.ship.GetComponent<ShipController>().PlayerActions;
         IS = new InputSimulator();
 
         Paused = true;    
@@ -104,9 +114,21 @@ public class LevelManager : MonoBehaviour {
             playTime += Time.deltaTime;
         TobiiAPI.GetUserPresence();
         gazePlotter.GetComponent<SpriteRenderer>().enabled = showGazePlot;
+
+        // Debug.Log("Update");
     }
 
-    
+    private void FixedUpdate()
+    {
+        if(playerActions.Fire.WasPressed && startButton.activeSelf)
+        {
+            StartCLicked();
+        }
+
+        // Debug.Log("FixedUpdate");
+    }
+
+
 
     public void StartCLicked()
     {
@@ -125,5 +147,5 @@ public class LevelManager : MonoBehaviour {
         IS.Keyboard.KeyPress(VirtualKeyCode.SHIFT);
         IS.Keyboard.KeyPress(VirtualKeyCode.F10);
     }
- 
+
 }

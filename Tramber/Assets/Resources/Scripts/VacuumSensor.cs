@@ -6,6 +6,7 @@ public class VacuumSensor : MonoBehaviour {
 
     public ShipController shipController;
 
+    public GameObject currentColliderGo;
 
 	// Use this for initialization
 	void Start () {
@@ -19,6 +20,7 @@ public class VacuumSensor : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        currentColliderGo = other.gameObject;
         // Debug.Log("Trigger Enter Vacuum");
 
         var drop = other.gameObject.GetComponent<Drop>();
@@ -83,7 +85,10 @@ public class VacuumSensor : MonoBehaviour {
         }     
     }
 
-
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        currentColliderGo = null;
+    }
 
 
 

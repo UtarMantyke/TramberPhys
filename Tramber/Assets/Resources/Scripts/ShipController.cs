@@ -11,6 +11,11 @@ public class ShipController : MonoBehaviour
 {
 
     MyPlayerActions playerActions;
+    public MyPlayerActions PlayerActions
+    {
+        get { return playerActions; }
+        set { playerActions = value; }
+    }
 
     public Rigidbody2D shipBody;
     public GameObject fireLeft;
@@ -22,6 +27,7 @@ public class ShipController : MonoBehaviour
     public GameObject stick2;
     public GameObject bottomLiquidBkg;
     public MyLiquid myLiquid;
+    public GameObject vacuum;
 
     [HideInInspector]
     public float engineStrenth = 15.0f;
@@ -61,6 +67,7 @@ public class ShipController : MonoBehaviour
 
     private void Awake()
     {
+        PlayerActions = MyPlayerActions.CreateWithDefaultBindings();
         cam = Camera.main;
         ForceUpdateAlpha();
         if (!LevelManager.Instance.useGravity)
@@ -77,7 +84,7 @@ public class ShipController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        playerActions = MyPlayerActions.CreateWithDefaultBindings();
+        
     }
 
     private void Update()
@@ -115,9 +122,9 @@ public class ShipController : MonoBehaviour
             return;
 
         var vpPosi = cam.WorldToViewportPoint(transform.position);
-        float xTor = 0.2f;
+        float xTor = 0.0f;
         float yTor = 0.15f;
-        if(vpPosi.x < 0 - xTor || vpPosi.x > 1 + xTor || vpPosi.y > 1 + yTor || vpPosi.y < 0 - yTor)
+        if( vpPosi.y > 1 + yTor || vpPosi.y < 0 - yTor)
         {
             inRestart = true;
             canControl = false;
@@ -142,6 +149,27 @@ public class ShipController : MonoBehaviour
                 canControl = true;
                 shipBody.bodyType = RigidbodyType2D.Dynamic;                
             });
+        }
+
+        else if(vpPosi.x < 0 - xTor || vpPosi.x > 1 + xTor)
+        {
+            var targetX = 0;
+
+            var right = cam.ViewportToWorldPoint(new Vector3(1, 0, 0));
+            var left = cam.ViewportToWorldPoint(new Vector3(0, 0, 0));
+
+            if (vpPosi.x < 0 - xTor)
+            {
+                var posi = transform.position;
+                posi.x = right.x;
+                transform.position = posi;
+            }
+            else
+            {
+                var posi = transform.position;
+                posi.x = left.x;
+                transform.position = posi;
+            }
         }
     }
 
@@ -207,7 +235,7 @@ public class ShipController : MonoBehaviour
 
         var strenth = engineStrenth;
 
-        if (playerActions.Left.IsPressed)
+        if (PlayerActions.Left.IsPressed)
         // if (playerActions.Left.IsPressed || devices[0].Action1.IsPressed || devices[1].Action1.IsPressed)
         // if (playerActions.Left.IsPressed || devices[0].Action1.IsPressed)
         {
@@ -222,7 +250,7 @@ public class ShipController : MonoBehaviour
         }
 
 
-        if (playerActions.Right.IsPressed)
+        if (PlayerActions.Right.IsPressed)
         // if (playerActions.Right.IsPressed || devices[0].Action2.IsPressed || devices[1].Action2.IsPressed)
         // if (playerActions.Right.IsPressed || devices[1].Action2.IsPressed)
         {

@@ -10,6 +10,8 @@ public class MyPlayerActions : PlayerActionSet
     public PlayerAction Left;
     public PlayerAction Right;
 
+    
+
 
     public MyPlayerActions()
     {
@@ -30,7 +32,14 @@ public class MyPlayerActions : PlayerActionSet
 
 
         playerActions.Fire.AddDefaultBinding(InputControlType.Action1);
+        playerActions.Fire.AddDefaultBinding(InputControlType.LeftBumper);
+        playerActions.Fire.AddDefaultBinding(InputControlType.RightBumper);
+
         playerActions.Left.AddDefaultBinding(Key.LeftArrow);
+        playerActions.Left.AddDefaultBinding(InputControlType.LeftTrigger);
+
+
+        playerActions.Right.AddDefaultBinding(InputControlType.RightTrigger);
         playerActions.Right.AddDefaultBinding(Key.RightArrow);
 
 

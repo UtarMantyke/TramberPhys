@@ -1,10 +1,16 @@
-﻿using System.Collections;
+﻿using DG.Tweening;
+using Sirenix.OdinInspector;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Eyes : MonoBehaviour {
 
-   
+    [EnumToggleButtons]
+    public DROP_TYPE type;
+
+
     public GameObject eye1;
     public GameObject eye2;
 
@@ -19,18 +25,49 @@ public class Eyes : MonoBehaviour {
     public Vector2 targetPosi;
     public float beamLengthFix = 1.0f;
 
+    MyPlayerActions playerActions;
+
+    Sequence coefSeq;
+
+    public Sprite[] normalEyes;
+    public Sprite[] cuteEyes;
+
     private void Awake()
     {
         mouseTarget = LevelManager.Instance.mouseTarget;
         asteroidLayer = LevelManager.Instance.asteroidLayer.GetComponent<AsteroidLayer>();
+
+
+
+        // height = LevelManager.Instance.laserHeightMin;
+
+
+        var coefSeq = DOTween.Sequence();
+        coefSeq.Append(DOTween.To(() => coefHeight, x => coefHeight = x, 0.5f, LevelManager.Instance.laserAnimDur));
+        coefSeq.Append(DOTween.To(() => coefHeight, x => coefHeight = x, 1f, LevelManager.Instance.laserAnimDur));
+        coefSeq.SetLoops(-1);
+        coefSeq.SetId("SC");
+
+        
+        // coefSeq.Pause();
     }
 
     // Use this for initialization
     void Start()
     {
-
+        playerActions = LevelManager.Instance.ship.GetComponent<ShipController>().PlayerActions;
+        DOTween.Pause("SC");
     }
 
+    bool isFirePressed()
+    {
+        bool ret;
+
+
+        ret = playerActions.Fire.IsPressed;
+        return ret;
+
+    }
 
     bool aimed = false;
     // Update is called once per frame
@@ -42,7 +79,8 @@ public class Eyes : MonoBehaviour {
         var lastTargetPosi = targetPosi;
         targetPosi = mouseTarget.GetComponent<MouseTarget_FollowMouse>().preferredPosi;
 
-        if (LevelManager.Instance.asteroidMode)
+        // if (LevelManager.Instance.asteroidMode)
+        if (playerActions.Fire.IsPressed)
         {
             
             targetPosi = mouseTarget.GetComponent<MouseTarget_FollowMouse>().preferredPosi;
@@ -67,15 +105,42 @@ public class Eyes : MonoBehaviour {
 
         }
 
-
         UpdateEyeLook();
 
         UpdateBeamState();
         UpdateBeamTailLocation();
+        RefreshHeight();
+
+        CheckIfNeedSwapToCuteEye();
+    }
+
+    private void CheckIfNeedSwapToCuteEye()
+    {
+        eye1.GetComponent<SpriteRenderer>().sprite = normalEyes[0];
+        eye2.GetComponent<SpriteRenderer>().sprite = normalEyes[1];
+
+        var vac = LevelManager.Instance.ship.GetComponent<ShipController>().vacuum.GetComponent<VacuumSensor>();
+        var go = vac.currentColliderGo;
+        if(go)
+        {
+            var drop = go.GetComponent<Drop>();
+            if(drop)
+            {
+                if(drop.type == type)
+                {
+                    eye1.GetComponent<SpriteRenderer>().sprite = cuteEyes[0];
+                    eye2.GetComponent<SpriteRenderer>().sprite = cuteEyes[1];
+                }
+            }
+        }
+        
     }
 
     void UpdateBeamTailLocation()
     {
+        if (!LevelManager.Instance.NeedPlanetStare)
+            return;
+
         var beamBodySprite = beamBody.transform.GetComponent<SpriteRenderer>();
 
         var lp = beamTail.transform.localPosition;
@@ -86,29 +151,35 @@ public class Eyes : MonoBehaviour {
 
     void UpdateBeamState()
     {
-        if (LevelManager.Instance.asteroidMode)
+        if (!LevelManager.Instance.NeedPlanetStare)
+            return;
+
+        // if (LevelManager.Instance.asteroidMode)
+        if (playerActions.Fire.IsPressed)
         {
-
-            beamRoot.SetActive(true);
-
-            
+            beamRoot.SetActive(true);            
             var length = Vector2.Distance(eye1.transform.position, targetPosi);
             length -= beamLengthFix;
 
             if (!aimed)
             {
                 length = 20;
+                coefHeight = 1.0f;
+                DOTween.Pause("SC");                
+            }
+            else
+            {
+                DOTween.Play("SC");
             }
 
             var beamBodySprite = beamBody.transform.GetComponent<SpriteRenderer>();
             var size = beamBodySprite.size;
             size.x = length;
-            beamBodySprite.size = size;
-
-            
+            beamBodySprite.size = size;            
         }
         else
         {
+            coefHeight = 1f;
             beamRoot.SetActive(false);
         }
 
@@ -142,9 +213,33 @@ public class Eyes : MonoBehaviour {
         var destiAn = oriAn;
         destiAn.z += ang;
 
-        var lerpedAn = Vector3.Lerp(oriAn, destiAn, Time.deltaTime * 50.0f);
+        // var lerpedAn = Vector3.Lerp(oriAn, destiAn, Time.deltaTime * 50.0f);
+        var lerpedAn = destiAn;
         this.transform.eulerAngles = lerpedAn;
 
 
     }
+
+    float height = 0;
+    float coefHeight = 1;
+    void RefreshHeight()
+    {
+        var beamBodySprite = beamBody.transform.GetComponent<SpriteRenderer>();
+        var size = beamBodySprite.size;
+        size.y = height * coefHeight;
+        beamBodySprite.size = size;
+    }      
+
+    public void BeamStartAnimation()
+    {
+        height = 0;
+        var seq = DOTween.Sequence();
+        seq.AppendCallback(() =>
+        {
+            height = 0;
+        });
+        seq.Append(DOTween.To(() => height, x => height = x, LevelManager.Instance.laserHeightMax, LevelManager.Instance.laserAnimDur));
+        
+    }
+
 }
