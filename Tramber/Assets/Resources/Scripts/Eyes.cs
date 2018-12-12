@@ -8,11 +8,21 @@ public class Eyes : MonoBehaviour {
     public GameObject eye1;
     public GameObject eye2;
 
+    public GameObject beamRoot;
+    public GameObject beamBody;
+    public GameObject beamTail;
+
     GameObject mouseTarget;
+    AsteroidLayer asteroidLayer;
+
+    // shared target position
+    public Vector2 targetPosi;
+    public float beamLengthFix = 1.0f;
 
     private void Awake()
     {
         mouseTarget = LevelManager.Instance.mouseTarget;
+        asteroidLayer = LevelManager.Instance.asteroidLayer.GetComponent<AsteroidLayer>();
     }
 
     // Use this for initialization
@@ -21,10 +31,80 @@ public class Eyes : MonoBehaviour {
 
     }
 
+
+    bool aimed = false;
     // Update is called once per frame
     void Update()
     {
+        asteroidLayer.AimedAtAstroid = false;
+        aimed = false;
+
+        var lastTargetPosi = targetPosi;
+        targetPosi = mouseTarget.GetComponent<MouseTarget_FollowMouse>().preferredPosi;
+
+        if (LevelManager.Instance.asteroidMode)
+        {
+            
+            targetPosi = mouseTarget.GetComponent<MouseTarget_FollowMouse>().preferredPosi;
+            Vector2 asteroidPosi = asteroidLayer.asteroid.transform.position;
+
+            // Debug.Log("Dis" + Vector2.Distance(targetPosi, asteroidPosi));
+
+            if (Vector2.Distance(targetPosi, asteroidPosi) < LevelManager.Instance.aimRange)
+            {
+                targetPosi = asteroidPosi;
+                asteroidLayer.AimedAtAstroid = true;
+                aimed = true;
+            }
+
+            //else
+            //{
+            //    targetPosi = Vector2.Lerp(lastTargetPosi, targetPosi, Time.deltaTime * 50.0f);
+            //}
+        }
+        else
+        {
+
+        }
+
+
         UpdateEyeLook();
+
+        UpdateBeamState();
+        UpdateBeamTailLocation();
+    }
+
+    void UpdateBeamTailLocation()
+    {
+        var beamBodySprite = beamBody.transform.GetComponent<SpriteRenderer>();
+
+        var lp = beamTail.transform.localPosition;
+        lp.x = beamBodySprite.size.x - 0.43f;
+
+        beamTail.transform.localPosition = lp;
+    }
+
+    void UpdateBeamState()
+    {
+        if (LevelManager.Instance.asteroidMode)
+        {
+
+            beamRoot.SetActive(true);
+
+            
+            var length = Vector2.Distance(eye1.transform.position, targetPosi);
+            length -= beamLengthFix;
+
+            var beamBodySprite = beamBody.transform.GetComponent<SpriteRenderer>();
+            var size = beamBodySprite.size;
+            size.x = length;
+            beamBodySprite.size = size;
+        }
+        else
+        {
+            beamRoot.SetActive(false);
+        }
+
 
     }
 
@@ -33,7 +113,7 @@ public class Eyes : MonoBehaviour {
         if (!LevelManager.Instance.NeedPlanetStare)
             return;
 
-        Vector2 targetPosi = mouseTarget.GetComponent<MouseTarget_FollowMouse>().preferredPosi;
+        
         Vector2 centerPosi = this.transform.position;
         Vector2 eye2Posi = eye2.transform.position;
         Vector2 eye1Posi = eye1.transform.position;

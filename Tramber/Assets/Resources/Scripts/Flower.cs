@@ -29,6 +29,10 @@ public class Flower : MonoBehaviour {
 
     public bool subscribed = false;
 
+    private float maxBlood = 100;
+    private float blood;
+
+
     // Use this for initialization
     void Start () {
 		
@@ -37,6 +41,7 @@ public class Flower : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         bubble.transform.localScale = (health / LevelManager.Instance.dropMaxHealth) * Vector3.one;
+        RefreshCrevice();
     }
 
     public void SetNeedType()
@@ -75,5 +80,20 @@ public class Flower : MonoBehaviour {
                 SetNeedType();
             });
         }
+    }
+
+    public void GotDamaged()
+    {
+        blood -= 10;
+        if(blood <=0)
+        {
+            blood = 0;
+        }
+
+    }
+
+    void RefreshCrevice()
+    {
+        var ratio = (maxBlood - blood) / maxBlood;
     }
 }

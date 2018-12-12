@@ -57,8 +57,11 @@ public class ShipController : MonoBehaviour
         set { currentCarriedDrop = value; }
     }
 
+    Camera cam;
+
     private void Awake()
     {
+        cam = Camera.main;
         ForceUpdateAlpha();
         if (!LevelManager.Instance.useGravity)
         {
@@ -111,7 +114,7 @@ public class ShipController : MonoBehaviour
         if (inRestart)
             return;
 
-        var vpPosi = Camera.main.WorldToViewportPoint(transform.position);
+        var vpPosi = cam.WorldToViewportPoint(transform.position);
         float xTor = 0.2f;
         float yTor = 0.15f;
         if(vpPosi.x < 0 - xTor || vpPosi.x > 1 + xTor || vpPosi.y > 1 + yTor || vpPosi.y < 0 - yTor)
@@ -156,6 +159,7 @@ public class ShipController : MonoBehaviour
         seq.AppendCallback(() =>
         {
             LevelManager.Instance.SetNeedPlanetScare(true);
+            LevelManager.Instance.Paused = false;
         });
         seq.Play();
     }

@@ -4,6 +4,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Tobii.Gaming;
 using UnityEngine;
+using WindowsInput;
+using WindowsInput.Native;
 
 public class LevelManager : MonoBehaviour {
 
@@ -38,13 +40,30 @@ public class LevelManager : MonoBehaviour {
     public float linerDrag = 1.0f;
     public float angularDrap = 1.0f;
 
-
+    [Title("Asteroid System")]
+    public float asteroidSpawnInterval = 20;
+    public float aimRange = 3.0f;
+    public float timeToDestory = 5.0f;
+    
 
     [Title("Basic")]
     public GameObject initPosi;
     public GameObject mouseTarget;
+    public GameObject flower;
+    public GameObject asteroidLayer;
     public PlayMakerFSM transitionFSM;
+    public bool asteroidMode = false;
 
+
+
+
+    public float playTime;
+    private bool paused = true;
+    public bool Paused
+    {
+        get { return paused; }
+        set { paused = value; }
+    }
 
 
     private static LevelManager _instance;
@@ -52,6 +71,9 @@ public class LevelManager : MonoBehaviour {
     {
         get { return _instance; }
     }
+
+    InputSimulator IS;
+
 
     void Awake()
     {
@@ -69,15 +91,22 @@ public class LevelManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-       gazePlotter.UseFilter = true;       
+        IS = new InputSimulator();
+
+        Paused = true;    
+        gazePlotter.UseFilter = true;       
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(!Paused)
+            playTime += Time.deltaTime;
         TobiiAPI.GetUserPresence();
         gazePlotter.GetComponent<SpriteRenderer>().enabled = showGazePlot;
     }
+
+    
 
     public void StartCLicked()
     {
@@ -89,5 +118,12 @@ public class LevelManager : MonoBehaviour {
         NeedPlanetStare = f;
     }
 
+
+    public void CalibrateClicked()
+    {
+        IS.Keyboard.KeyPress(VirtualKeyCode.CONTROL);
+        IS.Keyboard.KeyPress(VirtualKeyCode.SHIFT);
+        IS.Keyboard.KeyPress(VirtualKeyCode.F10);
+    }
  
 }
