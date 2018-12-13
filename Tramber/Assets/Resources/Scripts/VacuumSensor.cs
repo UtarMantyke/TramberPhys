@@ -69,8 +69,8 @@ public class VacuumSensor : MonoBehaviour {
         if(drop)
         {
             // already have one loaded
-            //if (shipController.CurrentCarriedDrop != DROP_TYPE.NONE)
-            //    return;
+            if (shipController.CurrentCarriedDrop != DROP_TYPE.NONE)
+                return;
 
             var type = drop.type;
             if (shipController.flower.CurrentNeedDrop == type)

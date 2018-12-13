@@ -36,8 +36,9 @@ public class MyPlayerActions : PlayerActionSet
         playerActions.Fire.AddDefaultBinding(InputControlType.Action2);
         playerActions.Fire.AddDefaultBinding(InputControlType.LeftBumper);
         playerActions.Fire.AddDefaultBinding(InputControlType.RightBumper);
+        playerActions.Fire.AddDefaultBinding(Mouse.RightButton);
 
-
+        playerActions.Suck.AddDefaultBinding(Mouse.LeftButton);
         playerActions.Suck.AddDefaultBinding(InputControlType.Action1);
 
         playerActions.Left.AddDefaultBinding(Key.LeftArrow);

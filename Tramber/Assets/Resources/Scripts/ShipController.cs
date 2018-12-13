@@ -28,6 +28,7 @@ public class ShipController : MonoBehaviour
     public GameObject bottomLiquidBkg;
     public MyLiquid myLiquid;
     public GameObject vacuum;
+    public GameObject vacuumIndicator;
 
     [HideInInspector]
     public float engineStrenth = 15.0f;
@@ -93,6 +94,19 @@ public class ShipController : MonoBehaviour
         SetAlpha(alpha);
         UpdateBottomVisibility();
         UpdateLiquid();
+        UpdateVacuumIndicatorVisiblility();
+    }
+
+    private void UpdateVacuumIndicatorVisiblility()
+    {
+        if (PlayerActions.Suck.IsPressed)
+        {
+            vacuumIndicator.SetActive(true);
+        }
+        else
+        {
+            vacuumIndicator.SetActive(false);
+        }
     }
 
 
