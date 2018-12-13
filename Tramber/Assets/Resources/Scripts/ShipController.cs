@@ -241,6 +241,9 @@ public class ShipController : MonoBehaviour
             vacuumIndicator.SetActive(false);
         }
 
+        //var devices = InControl.InputManager.Devices;
+        //Debug.Log(devices.Count);
+        Debug.Log(vib);
         InControl.InputManager.ActiveDevice.Vibrate(vib);
     }
 
@@ -403,7 +406,7 @@ public class ShipController : MonoBehaviour
             var dir = forceThroughAnchor.transform.position - fireLeft.transform.position;
             dir.Normalize();            
             shipBody.AddForceAtPosition(dir * strenth, fireLeft.transform.position);
-            fireLeft.SetActive(true);
+            fireLeft.SetActive(true);         
         }
         else
         {

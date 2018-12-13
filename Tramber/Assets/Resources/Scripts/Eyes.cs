@@ -81,6 +81,8 @@ public class Eyes : MonoBehaviour {
         var lastTargetPosi = targetPosi;
         targetPosi = mouseTarget.GetComponent<MouseTarget_FollowMouse>().preferredPosi;
 
+        bool needAstroidVibrate = false;
+
         // if (LevelManager.Instance.asteroidMode)
         if (playerActions.Fire.IsPressed)
         {
@@ -96,6 +98,7 @@ public class Eyes : MonoBehaviour {
                 targetPosi = asteroidPosi;
                 asteroidLayer.AimedAtAstroid = true;
                 aimed = true;
+                needAstroidVibrate = true;
             }
 
             //else
@@ -107,6 +110,17 @@ public class Eyes : MonoBehaviour {
         {
 
         }
+
+        //if (needAstroidVibrate)
+        //{
+        //    Debug.Log("123");
+        //    InControl.InputManager.ActiveDevice.Vibrate(0.5f);
+        //}
+        //else
+        //{
+        //    Debug.Log("2332");
+        //    InControl.InputManager.ActiveDevice.Vibrate(0);
+        //}
 
         UpdateEyeLook();
 

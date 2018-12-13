@@ -39,14 +39,16 @@ public class MouseTarget_FollowMouse : MonoBehaviour
         //now translate this position to world coordinates
         Vector3 mousePositionInWorld = Camera.main.ScreenToWorldPoint(targetPosi);
 
-        if (LevelManager.Instance.useEyeControl)
-        {
-            if (tobiiIsConnected)
-            {
-                if(gazePlot)
-                    mousePositionInWorld = gazePlot.transform.position;
-            }
-        }
+        //if (LevelManager.Instance.useEyeControl)
+        //{
+        //    if (tobiiIsConnected)
+        //    {
+        //        if(gazePlot)
+        //            mousePositionInWorld = gazePlot.transform.position;
+        //    }
+        //}
+
+        mousePositionInWorld = gazePlot.transform.position;
         preferredPosi = mousePositionInWorld;
 
         //move the mouse target to the mouse position
