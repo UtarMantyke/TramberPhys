@@ -90,7 +90,8 @@ public class Eyes : MonoBehaviour {
 
             // Debug.Log("Dis" + Vector2.Distance(targetPosi, asteroidPosi));
 
-            if (Vector2.Distance(targetPosi, asteroidPosi) < LevelManager.Instance.aimRange)
+            if (LevelManager.Instance.asteroidMode &&
+                Vector2.Distance(targetPosi, asteroidPosi) < LevelManager.Instance.aimRange)
             {
                 targetPosi = asteroidPosi;
                 asteroidLayer.AimedAtAstroid = true;

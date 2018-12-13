@@ -6,6 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using WindowsInput;
 using WindowsInput.Native;
 
@@ -51,6 +52,10 @@ public class LevelManager : MonoBehaviour {
     public float laserHeightMin = 0.5f;
     public float laserHeightMax = 0.88f;
 
+    [Title("Auto Aim System")]
+    public float dropAutoAimDistance = 0.8f;
+    public float dropAutoAimAngle = 60;
+
 
     [Title("Basic")]
     public GameObject initPosi;
@@ -59,7 +64,8 @@ public class LevelManager : MonoBehaviour {
     public GameObject asteroidLayer;
     public GameObject ship;
     public GameObject startButton;
-    public PlayMakerFSM transitionFSM;
+    public GameObject transitionFSM;
+    public GameObject backButton;
     public bool asteroidMode = false;
 
 
@@ -87,15 +93,15 @@ public class LevelManager : MonoBehaviour {
 
     void Awake()
     {
-        if (_instance != null)
-        {
-            Destroy(this.gameObject);
-        }
-        else
-        {
+        //if (_instance != null)
+        //{
+        //    Destroy(this.gameObject);
+        //}
+        //else
+        //{
             _instance = this;
-            DontDestroyOnLoad(this.gameObject);
-        }
+            // DontDestroyOnLoad(this.gameObject);
+        //}
     }
 
 
@@ -117,28 +123,30 @@ public class LevelManager : MonoBehaviour {
         gazePlotter.GetComponent<SpriteRenderer>().enabled = showGazePlot;
 
         // Debug.Log("Update");
-        CehckControllerStartClicked();
+        CheckControllerStartClicked();
 
     }
 
-    private void CehckControllerStartClicked()
+    private void CheckControllerStartClicked()
     {
 
         InControl.InputDevice device = InControl.InputManager.ActiveDevice;
         InputControl control = device.GetControl(InputControlType.Action1);
 
-        if (control.WasPressed && startButton.activeSelf)
+        if (control.WasPressed )
         {
-            StartCLicked();
-        }
-        
+            if (startButton.activeSelf)
+                StartCLicked();
+            else if (backButton.activeSelf)
+                EndBackClicked();
+        }        
     }
 
 
 
     public void StartCLicked()
-    {
-        transitionFSM.SendEvent("TRANSITION_TO_SCENE");
+    {        
+        transitionFSM.SendFSMEvent("TRANSITION_TO_SCENE");
     }
 
     public void SetNeedPlanetScare(bool f)
@@ -154,4 +162,17 @@ public class LevelManager : MonoBehaviour {
         IS.Keyboard.KeyPress(VirtualKeyCode.F10);
     }
 
+    public void GotoEnd()
+    {
+        paused = true;
+        ship.GetComponent<Rigidbody2D>().gravityScale = 0;
+        ship.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        transitionFSM.SendFSMEvent("TRANSITION_TO_END");
+    }
+
+    public void EndBackClicked()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);       
+    }
 }

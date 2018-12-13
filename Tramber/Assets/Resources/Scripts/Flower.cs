@@ -24,7 +24,8 @@ public class Flower : MonoBehaviour {
     public Sprite[] creviceSprite;
     public GameObject crevice;
 
-    int[] seq = { 0,1,0, 2, 1, 0,};
+    // int[] seq = { 0,1,0, 2, 1, 0,};
+    int[] seq = { 0};
     int seqIndex = 0;
 
     public event Action<Flower> OnFeeded;
@@ -34,11 +35,13 @@ public class Flower : MonoBehaviour {
     private const int maxBlood = 10;
     private int blood = maxBlood;
 
+    MyPlayerActions playerActions;
 
     // Use this for initialization
     void Start () {
-		
-	}
+        playerActions = LevelManager.Instance.ship.GetComponent<ShipController>().PlayerActions;
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -48,10 +51,18 @@ public class Flower : MonoBehaviour {
 
     public void SetNeedType()
     {
-        CurrentNeedDrop = (DROP_TYPE)seq[seqIndex];
-        needDropFigure.GetComponent<SpriteRenderer>().sprite = dropSprites[seq[seqIndex]];
+        if(seqIndex >= seq.Length)
+        {
+            LevelManager.Instance.GotoEnd();
+        }
+        else
+        {
+            CurrentNeedDrop = (DROP_TYPE)seq[seqIndex];
+            needDropFigure.GetComponent<SpriteRenderer>().sprite = dropSprites[seq[seqIndex]];
 
-        spaceShip.myLiquid.SetMaterialType(CurrentNeedDrop);
+            spaceShip.myLiquid.SetMaterialType(CurrentNeedDrop);
+        }
+       
     }
 
     float health = 100.0f;
@@ -59,6 +70,12 @@ public class Flower : MonoBehaviour {
     float tempDelta;
     public void TouchVacuum()
     {
+        if (!playerActions.Suck.IsPressed)
+        {
+            return;
+        }
+
+
         var delta = Time.deltaTime * LevelManager.Instance.dropMaxHealth / LevelManager.Instance.timeToAbsorb;
         
         tempDelta += delta;

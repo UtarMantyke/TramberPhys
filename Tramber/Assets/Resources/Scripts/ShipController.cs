@@ -29,6 +29,13 @@ public class ShipController : MonoBehaviour
     public MyLiquid myLiquid;
     public GameObject vacuum;
     public GameObject vacuumIndicator;
+    public GameObject suckerRoot;
+    public GameObject fakeSuckerRoot;
+    public GameObject[] aimTargets;
+
+    public GameObject full;
+
+
 
     [HideInInspector]
     public float engineStrenth = 15.0f;
@@ -37,6 +44,11 @@ public class ShipController : MonoBehaviour
     public float fullness;
 
     bool canControl = true;
+    public bool CanControl
+    {
+        get { return canControl; }
+        set { canControl = value; }
+    }
     bool inRestart = false;
 
 
@@ -95,18 +107,123 @@ public class ShipController : MonoBehaviour
         UpdateBottomVisibility();
         UpdateLiquid();
         UpdateVacuumIndicatorVisiblility();
+        CheckIfNeedShowFull();
+
+        SemiAutoAim();
+    }
+
+    private void SemiAutoAim()
+    {
+        float minDis = 100;
+        GameObject nearestGo = null;
+        foreach(var go in aimTargets)
+        {
+            if(!nearestGo)
+            {
+                nearestGo = go;
+                continue;
+            }
+
+            var dis = Vector2.Distance(go.transform.position, suckerRoot.transform.position);
+            if(dis < minDis)
+            {
+                minDis = dis;
+                nearestGo = go;
+            }
+        }
+
+
+        float destiZ = 0;
+        if(minDis <= LevelManager.Instance.dropAutoAimDistance)
+        {
+            Vector3 diff = nearestGo.transform.position - suckerRoot.transform.position;
+            diff.Normalize();
+
+            float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+            fakeSuckerRoot.transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
+
+            var lZ = GetNormAng(fakeSuckerRoot.transform.localEulerAngles.z);
+      
+            lZ = lZ.Clamp(-LevelManager.Instance.dropAutoAimAngle, LevelManager.Instance.dropAutoAimAngle);
+            destiZ = lZ;
+        }
+
+
+        
+        var angle = suckerRoot.transform.localEulerAngles;
+
+        var lerpedAn = Mathf.Lerp(GetNormAng(angle.z), destiZ, Time.deltaTime * 10);
+        // var lerpedAn = destiZ;
+        angle.z = lerpedAn;
+        suckerRoot.transform.localEulerAngles = angle;
+    }
+
+    public float GetNormAng(float input)
+    {
+        var lZ = input;
+        lZ += 360 * 3;
+        lZ %= 360;
+        if (lZ > 180)
+        {
+            lZ -= 360;
+        }
+
+        return lZ;
+    }
+
+    private void CheckIfNeedShowFull()
+    {
+        bool need = false;
+        if (CurrentCarriedDrop != DROP_TYPE.NONE)
+        {
+            var max = LevelManager.Instance.dropMaxHealth -
+            (int)(LevelManager.Instance.dropMaxHealth * LevelManager.Instance.absorbThreshouldRatio);
+
+            if (liquidAmount == max)
+            {
+                need = true;
+            }
+        }
+
+        full.SetActive(need);
     }
 
     private void UpdateVacuumIndicatorVisiblility()
     {
+        float vib = 0;
         if (PlayerActions.Suck.IsPressed)
-        {
+        {   
             vacuumIndicator.SetActive(true);
+
+            var vac = vacuum.GetComponent<VacuumSensor>();
+
+            var go = vac.currentColliderGo;
+            if (go)
+            {
+                var drop = go.GetComponent<Drop>();
+                var flowerScript = go.GetComponent<Flower>();
+                if (drop)
+                {
+                    if (drop.type == flower.CurrentNeedDrop && fullness != 1)
+                    {
+                        vib = 0.3f;
+                    }
+                }
+                else if(flowerScript)
+                {
+                    if(CurrentCarriedDrop == flower.CurrentNeedDrop && fullness != 0)
+                        vib = 0.3f;
+                }
+            }
+            
         }
         else
         {
+            vib = 0;
             vacuumIndicator.SetActive(false);
         }
+
+        InControl.InputManager.ActiveDevice.Vibrate(vib);
     }
 
 
@@ -132,7 +249,7 @@ public class ShipController : MonoBehaviour
 
     void CheckIfOutOfScreen()
     {
-        if (inRestart)
+        if (inRestart || LevelManager.Instance.Paused)
             return;
 
         var vpPosi = cam.WorldToViewportPoint(transform.position);
@@ -141,7 +258,7 @@ public class ShipController : MonoBehaviour
         if( vpPosi.y > 1 + yTor || vpPosi.y < 0 - yTor)
         {
             inRestart = true;
-            canControl = false;
+            CanControl = false;
             shipBody.bodyType = RigidbodyType2D.Static;
             transform.position = LevelManager.Instance.initPosi.transform.position;
 
@@ -160,7 +277,7 @@ public class ShipController : MonoBehaviour
             seq.Append(DOTween.To(() => alpha, x => alpha = x, 1, dt));
             seq.AppendCallback(() => {
                 inRestart = false;
-                canControl = true;
+                CanControl = true;
                 shipBody.bodyType = RigidbodyType2D.Dynamic;                
             });
         }
@@ -237,7 +354,7 @@ public class ShipController : MonoBehaviour
 
     void UpdateEngine()
     {
-        if (!canControl)
+        if (!CanControl)
             return;
 
 
@@ -301,6 +418,8 @@ public class ShipController : MonoBehaviour
         {
             return;
         }
+
+        
 
         reallyGain = amount;
         var max = LevelManager.Instance.dropMaxHealth - 

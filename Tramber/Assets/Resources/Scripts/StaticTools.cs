@@ -13,4 +13,12 @@ public static class StaticTools  {
         else return val;
     }
 
+    public static void SendFSMEvent(this GameObject go, string eventName)
+    {
+        foreach(var fsm in go.GetComponents<PlayMakerFSM>())
+        {
+            fsm.SendEvent(eventName);
+        }
+    }
+
 }

@@ -101,7 +101,7 @@ public class AsteroidLayer : MonoBehaviour {
     {
         LevelManager.Instance.asteroidMode = false;
 
-        if (asteroid && !destroyed)
+        if (asteroid && !destroyed && asteroid.activeSelf)
         {
             var posi = cam.WorldToViewportPoint(asteroid.transform.position);
             
@@ -118,19 +118,30 @@ public class AsteroidLayer : MonoBehaviour {
         destroyed = false;
 
         asteroid.SetActive(true);
-        // path.DOPlay();
+                
         path.DORestart();        
     }
 
-
+    int lastWayPoint = -1;
     public List<int> damageIndexList = new List<int>() { 2, 5, 7};
     public void WayPointChanged(int value)
-    {  
+    {
+        if(value < lastWayPoint)
+        {
+            lastWayPoint = value;
+            return;
+        }
+        lastWayPoint = value;
+
+        Debug.Log("WayPoint: " + value);
         if (damageIndexList.Contains(value))
         {           
             var flower = LevelManager.Instance.flower.GetComponent<Flower>();
+            Debug.Log("WayPoint: GotDamaged" );
             flower.GotDamaged();
         }
+
+
     }
 
     public void WayPointCompleted()
