@@ -33,6 +33,9 @@ public class AsteroidLayer : MonoBehaviour {
         cam = Camera.main;
     }
 
+    public GameObject asteroidPrompt;
+    public GameObject bPromopt;
+
 
     bool bided = false;
     // Bind can only happen after start
@@ -77,9 +80,17 @@ public class AsteroidLayer : MonoBehaviour {
             health -= Time.deltaTime * maxHealth / LevelManager.Instance.timeToDestory;
             if (health <= 0)
             {
+                if(!destroyed)
+                {
+                    LevelManager.Instance.asteroidDestroyedCount++;
+                }
+
                 // destroyed
                 destroyed = true;
                 asteroid.SetActive(false);
+
+                asteroidPrompt.SetActive(false);
+                bPromopt.SetActive(false);
             }
         }
   
@@ -112,6 +123,7 @@ public class AsteroidLayer : MonoBehaviour {
         }        
     }
 
+    bool firstShow = true;
     public void BeginPath()
     {
         health = maxHealth;
@@ -120,13 +132,21 @@ public class AsteroidLayer : MonoBehaviour {
         asteroid.SetActive(true);
                 
         path.DORestart();        
+
+        if(firstShow)
+        {
+            firstShow = false;
+            asteroidPrompt.SetActive(true);
+            bPromopt.SetActive(true);
+        }
+
     }
 
     int lastWayPoint = -1;
     public List<int> damageIndexList = new List<int>() { 2, 5, 7};
     public void WayPointChanged(int value)
     {
-        if(value < lastWayPoint)
+        if(value < lastWayPoint || destroyed)
         {
             lastWayPoint = value;
             return;
@@ -147,6 +167,9 @@ public class AsteroidLayer : MonoBehaviour {
     public void WayPointCompleted()
     {
         destroyed = true;
+
+        asteroidPrompt.SetActive(false);
+        bPromopt.SetActive(false);
     }
 
    

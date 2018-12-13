@@ -24,8 +24,8 @@ public class Flower : MonoBehaviour {
     public Sprite[] creviceSprite;
     public GameObject crevice;
 
-    // int[] seq = { 0,1,0, 2, 1, 0,};
-    int[] seq = { 0};
+    int[] seq = { 0,1,0, 2, 1, 0,};
+    //int[] seq = { 0};
     int seqIndex = 0;
 
     public event Action<Flower> OnFeeded;
@@ -53,6 +53,7 @@ public class Flower : MonoBehaviour {
     {
         if(seqIndex >= seq.Length)
         {
+            bubble.SetActive(false);
             LevelManager.Instance.GotoEnd();
         }
         else
@@ -114,6 +115,8 @@ public class Flower : MonoBehaviour {
 
     public void GotDamaged()
     {
+        LevelManager.Instance.flowerDamagedCount++;
+
         // only 11 sprites
 
         // blood 10 -> sprite none -> index 0

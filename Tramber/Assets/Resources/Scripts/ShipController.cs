@@ -35,7 +35,8 @@ public class ShipController : MonoBehaviour
 
     public GameObject full;
 
-
+    public GameObject flowerPrompt;
+    public GameObject waterPropmt;
 
     [HideInInspector]
     public float engineStrenth = 15.0f;
@@ -78,9 +79,12 @@ public class ShipController : MonoBehaviour
 
     Camera cam;
 
+  
+
     private void Awake()
     {
         PlayerActions = MyPlayerActions.CreateWithDefaultBindings();
+        
         cam = Camera.main;
         ForceUpdateAlpha();
         if (!LevelManager.Instance.useGravity)
@@ -171,6 +175,8 @@ public class ShipController : MonoBehaviour
         return lZ;
     }
 
+
+    bool firstTimeFullFlag = false;
     private void CheckIfNeedShowFull()
     {
         bool need = false;
@@ -179,13 +185,25 @@ public class ShipController : MonoBehaviour
             var max = LevelManager.Instance.dropMaxHealth -
             (int)(LevelManager.Instance.dropMaxHealth * LevelManager.Instance.absorbThreshouldRatio);
 
-            if (liquidAmount == max)
+            // if (liquidAmount == max)
             {
                 need = true;
             }
         }
 
         full.SetActive(need);
+
+        if(need)
+        {
+            if(!firstTimeFullFlag)
+            {
+                firstTimeFullFlag = true;
+                waterPropmt.SetActive(false);
+                flowerPrompt.SetActive(true);
+            }
+
+           
+        }
     }
 
     private void UpdateVacuumIndicatorVisiblility()
@@ -257,6 +275,8 @@ public class ShipController : MonoBehaviour
         float yTor = 0.15f;
         if( vpPosi.y > 1 + yTor || vpPosi.y < 0 - yTor)
         {
+            LevelManager.Instance.shipCrashCount++;
+
             inRestart = true;
             CanControl = false;
             shipBody.bodyType = RigidbodyType2D.Static;
@@ -306,6 +326,8 @@ public class ShipController : MonoBehaviour
 
     public void TransitionFadeIn()
     {
+        canControl = false;
+        shipBody.bodyType = RigidbodyType2D.Static;
         float dt = 0.3f;
 
         var seq = DOTween.Sequence();
@@ -317,10 +339,18 @@ public class ShipController : MonoBehaviour
         seq.Append(DOTween.To(() => alpha, x => alpha = x, 1, dt));
         seq.AppendCallback(() =>
         {
-            LevelManager.Instance.SetNeedPlanetScare(true);
-            LevelManager.Instance.Paused = false;
+            TransitionFadeInEnd();
         });
         seq.Play();
+    }
+
+    public void TransitionFadeInEnd()
+    {
+        LevelManager.Instance.SetNeedPlanetScare(true);
+        LevelManager.Instance.Paused = false;
+        waterPropmt.SetActive(true);
+        canControl = true;
+        shipBody.bodyType = RigidbodyType2D.Dynamic;
     }
 
     public void ForceUpdateAlpha()
@@ -396,10 +426,19 @@ public class ShipController : MonoBehaviour
         }
     }
 
+    bool firstTimeFeededFlag = false;
     public void Feeded(Flower fl)
     {
         CurrentCarriedDrop = DROP_TYPE.NONE;
         liquidAmount = 0;
+
+        if(!firstTimeFeededFlag)
+        {
+            firstTimeFeededFlag = true;
+            flowerPrompt.SetActive(false);
+        }
+
+        LevelManager.Instance.feededCount++;
     }
 
 

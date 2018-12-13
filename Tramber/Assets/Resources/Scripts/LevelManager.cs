@@ -69,7 +69,17 @@ public class LevelManager : MonoBehaviour {
     public bool asteroidMode = false;
 
 
+    [HideInEditorMode]
+    public int flowerDamagedCount;
 
+    [HideInEditorMode]
+    public int shipCrashCount;
+
+    [HideInEditorMode]
+    public int asteroidDestroyedCount;
+
+    [HideInEditorMode]
+    public int feededCount;
 
     public float playTime;
     private bool paused = true;
@@ -107,6 +117,8 @@ public class LevelManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        ship.transform.position = initPosi.transform.position;
+
         playerActions = LevelManager.Instance.ship.GetComponent<ShipController>().PlayerActions;
         IS = new InputSimulator();
 
@@ -125,6 +137,21 @@ public class LevelManager : MonoBehaviour {
         // Debug.Log("Update");
         CheckControllerStartClicked();
 
+        CheckIfOutOfTime();
+    }
+
+
+    bool outOfTimeInvoked = false;
+    void CheckIfOutOfTime()
+    {
+        if (outOfTimeInvoked)
+            return;
+
+        if(playTime > 300)
+        {
+            outOfTimeInvoked = true;
+            EndBackClicked();
+        }
     }
 
     private void CheckControllerStartClicked()
