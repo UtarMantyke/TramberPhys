@@ -150,7 +150,7 @@ public class LevelManager : MonoBehaviour {
         if(playTime > 300)
         {
             outOfTimeInvoked = true;
-            EndBackClicked();
+            GotoEnd();
         }
     }
 

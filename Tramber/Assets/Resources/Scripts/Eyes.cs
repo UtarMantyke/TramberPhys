@@ -105,22 +105,25 @@ public class Eyes : MonoBehaviour {
             //{
             //    targetPosi = Vector2.Lerp(lastTargetPosi, targetPosi, Time.deltaTime * 50.0f);
             //}
+
+
+
+            //if (needAstroidVibrate)
+            //{
+            //    Debug.Log("123");
+            //    InControl.InputManager.ActiveDevice.Vibrate(0.5f);
+            //}
+            //else
+            //{
+            //    Debug.Log("2332");
+            //    InControl.InputManager.ActiveDevice.Vibrate(0);
+            //}
+
         }
         else
         {
 
         }
-
-        //if (needAstroidVibrate)
-        //{
-        //    Debug.Log("123");
-        //    InControl.InputManager.ActiveDevice.Vibrate(0.5f);
-        //}
-        //else
-        //{
-        //    Debug.Log("2332");
-        //    InControl.InputManager.ActiveDevice.Vibrate(0);
-        //}
 
         UpdateEyeLook();
 

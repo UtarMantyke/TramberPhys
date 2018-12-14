@@ -233,17 +233,19 @@ public class ShipController : MonoBehaviour
                         vib = 0.3f;
                 }
             }
-            
+            // InControl.InputManager.ActiveDevice.Vibrate(vib);
         }
         else
         {
             vib = 0;
             vacuumIndicator.SetActive(false);
+
+            // InControl.InputManager.ActiveDevice.Vibrate(0);
         }
 
         //var devices = InControl.InputManager.Devices;
         //Debug.Log(devices.Count);
-        Debug.Log(vib);
+        //Debug.Log(vib);
         InControl.InputManager.ActiveDevice.Vibrate(vib);
     }
 

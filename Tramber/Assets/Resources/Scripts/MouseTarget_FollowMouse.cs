@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Tobii.Gaming;
 using Tobii.Gaming.Internal;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 public class MouseTarget_FollowMouse : MonoBehaviour
 {
@@ -13,14 +13,24 @@ public class MouseTarget_FollowMouse : MonoBehaviour
     public GameObject gazePlot;
     public Vector3 preferredPosi;
 
+    public Text testText;
+
     bool tobiiIsConnected = true;
 
     private void Update()
     {
 
         // don't know why TobiiAPI.IsConnected swing between false and true when it not connected
-        if (!TobiiAPI.IsConnected)
-            tobiiIsConnected = false;
+
+
+        if(Time.time > 2.0f)
+        {
+            if (!TobiiAPI.IsConnected)
+                tobiiIsConnected = false;
+        }
+
+
+        //testText.text = TobiiAPI.IsConnected + " " + tobiiIsConnected;
     }
 
     // Update is called once per frame
@@ -39,16 +49,17 @@ public class MouseTarget_FollowMouse : MonoBehaviour
         //now translate this position to world coordinates
         Vector3 mousePositionInWorld = Camera.main.ScreenToWorldPoint(targetPosi);
 
-        //if (LevelManager.Instance.useEyeControl)
-        //{
-        //    if (tobiiIsConnected)
-        //    {
-        //        if(gazePlot)
-        //            mousePositionInWorld = gazePlot.transform.position;
-        //    }
-        //}
+        if (LevelManager.Instance.useEyeControl)
+        {
+            if (tobiiIsConnected)
+            {
+                if (gazePlot)
+                    mousePositionInWorld = gazePlot.transform.position;
+            }
+        }
 
-        mousePositionInWorld = gazePlot.transform.position;
+        // mousePositionInWorld = gazePlot.transform.position;
+
         preferredPosi = mousePositionInWorld;
 
         //move the mouse target to the mouse position
